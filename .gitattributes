@@ -1,2 +1,8 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Binarios: nada de normalización de saltos de línea, que los corrompe.
+*.woff2 binary
+*.png   binary
+*.jpg   binary
+*.ico   binary
