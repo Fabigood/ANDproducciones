@@ -824,13 +824,21 @@
     const r1 = heroWrap.getBoundingClientRect();
     const total1 = Math.max(1, heroWrap.offsetHeight - vh);
     const p1 = clamp((-r1.top)/total1, 0, 1);
-    const scale = 1 + p1*2.4;
-    const radius = 30 - p1*10;
-    const rotate = p1*45;
+
+    // El titular y la marca ocupan el mismo centro de pantalla. Cuando crecían a
+    // la vez, el texto —ya a media opacidad— quedaba ilegible sobre el azul y
+    // parecía borrarse. Se reparten el recorrido: el titular se va del todo en el
+    // primer tramo y la marca no empieza a crecer hasta que ya no se ve.
+    const pTexto = clamp(p1/0.30, 0, 1);
+    const pMarca = clamp((p1-0.30)/0.70, 0, 1);
+
+    const scale = 1 + pMarca*2.4;
+    const radius = 30 - pMarca*10;
+    const rotate = pMarca*45;
     markBadge.style.transform = `scale(${scale}) rotate(${rotate}deg)`;
     markBadge.style.borderRadius = `${radius}px`;
-    setVisibility(heroPart, clamp(1 - p1*1.6, 0, 1));
-    setVisibility(bioPart,  clamp((p1-0.35)*2.2, 0, 1));
+    setVisibility(heroPart, 1 - pTexto);
+    setVisibility(bioPart,  clamp((p1-0.55)/0.30, 0, 1));
 
     // quote scrub
     const r2 = quoteWrap.getBoundingClientRect();
