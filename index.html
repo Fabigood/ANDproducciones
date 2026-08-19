@@ -55,7 +55,7 @@
     --cobalto-txt:#8FB4FF;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth;overflow-x:clip;}
   body{
     font-family:'Manrope',sans-serif;
     background:var(--midnight);
@@ -138,7 +138,11 @@
      contenido de una no cabe (móvil bajo, apaisado), la sección crece en vez de
      desbordarse sobre la siguiente. El JS del sticky mide offsetHeight real,
      así que el efecto sigue calculándose bien. */
-  .hero-wrap{position:relative;}
+  /* La marca crece y gira dentro de esta sección: sin contención, su caja
+     desbordaba la ventana y el navegador sacaba barra horizontal. clip recorta
+     sin crear contenedor de scroll, así que el sticky de dentro sigue vivo
+     (overflow:hidden sí lo habría roto). */
+  .hero-wrap{position:relative;overflow-x:clip;}
   .sticky-mark{position:sticky;top:0;height:100vh;height:100dvh;display:flex;align-items:center;justify-content:center;z-index:1;pointer-events:none;}
   .mark-badge{
     width:170px;height:170px;border-radius:30px;
@@ -1192,6 +1196,7 @@
   const heroWrap = document.getElementById('hero');
   const quoteWrap = document.querySelector('.quote-wrap');
   const heroPart = document.querySelector('.hero-part');
+  const heroTitle = document.querySelector('h1.hero-title');
   const bioPart = document.querySelector('.bio-part');
 
   function clamp(v,min,max){return Math.max(min,Math.min(max,v));}
@@ -1219,20 +1224,33 @@
     const total1 = Math.max(1, heroWrap.offsetHeight - vh);
     const p1 = clamp((-r1.top)/total1, 0, 1);
 
-    // El titular y la marca ocupan el mismo centro de pantalla. Cuando crecían a
-    // la vez, el texto —ya a media opacidad— quedaba ilegible sobre el azul y
-    // parecía borrarse. Se reparten el recorrido: el titular se va del todo en el
-    // primer tramo y la marca no empieza a crecer hasta que ya no se ve.
-    const pTexto = clamp(p1/0.30, 0, 1);
-    const pMarca = clamp((p1-0.30)/0.70, 0, 1);
+    // El titular NO se atenúa: sale de la pantalla por su propio scroll, que es
+    // lo natural. Atenuarlo era lo que lo hacía "desaparecer" a media lectura, y
+    // encima competía con la marca por el centro de la pantalla.
+    //
+    // La marca espera a que el titular haya salido de verdad —medido, no con un
+    // porcentaje fijo— y solo entonces empieza a crecer. Así nunca se pisan.
+    const finTitular = heroTitle.offsetTop + heroTitle.offsetHeight + heroPart.offsetTop;
+    const pSalida = clamp(finTitular/total1, 0.12, 0.7);
+    const pMarca = clamp((p1-pSalida)/(1-pSalida), 0, 1);
 
-    const scale = 1 + pMarca*2.4;
+    // La marca gira 45 grados, así que su caja envolvente mide lado x raíz de 2.
+    // Con la escala fija de 3.4 llegaba a 529px en una pantalla de 375 y se salía
+    // por ambos lados. El tope se calcula contra la ventana: en escritorio da el
+    // mismo 3.4 de siempre, en móvil lo que quepa.
+    const ladoBase = markBadge.offsetWidth || 170;
+    const cajaMax = Math.min(window.innerWidth, vh) * 0.92;
+    const escalaTope = Math.min(3.4, Math.max(1.6, (cajaMax/Math.SQRT2)/ladoBase));
+
+    const scale = 1 + pMarca*(escalaTope-1);
     const radius = 30 - pMarca*10;
     const rotate = pMarca*45;
     markBadge.style.transform = `scale(${scale}) rotate(${rotate}deg)`;
     markBadge.style.borderRadius = `${radius}px`;
-    setVisibility(heroPart, 1 - pTexto);
-    setVisibility(bioPart,  clamp((p1-0.55)/0.30, 0, 1));
+    // Ambas mitades quedan visibles y legibles todo el rato: el scroll ya se
+    // encarga de sacarlas de pantalla.
+    setVisibility(heroPart, 1);
+    setVisibility(bioPart, 1);
 
     // quote scrub
     const r2 = quoteWrap.getBoundingClientRect();
@@ -1258,8 +1276,6 @@
     if(reduceMotion.matches){
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onScroll);
-      setVisibility(heroPart, 1);
-      setVisibility(bioPart, 1);
       markBadge.style.transform = '';
       words.forEach(w=>{
         w.classList.add('lit');
