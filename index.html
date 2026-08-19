@@ -236,6 +236,24 @@
   .cliente p{font-size:13px;color:var(--muted);line-height:1.5;}
   .cliente.confidencial{border-color:rgba(21,87,255,.32);background:linear-gradient(160deg,rgba(21,87,255,.07),transparent 62%),var(--midnight-2);}
   .cliente.confidencial span{color:var(--cobalto-txt);}
+  /* Las marcas con sitio publicado son un <a>: la tarjeta entera entra al
+     proyecto. Las que operan sobre sistemas internos siguen siendo un <div>,
+     sin afordancia de clic que no lleve a ninguna parte. */
+  a.cliente{display:block;color:inherit;text-decoration:none;}
+  .cliente span.cliente-ver{display:flex;align-items:center;gap:6px;margin-top:12px;margin-bottom:0;
+    font-size:12px;font-weight:600;letter-spacing:.02em;text-transform:none;color:var(--cobalto-txt);}
+  .cliente-ver svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2;
+    stroke-linecap:round;stroke-linejoin:round;transition:transform .25s;}
+  a.cliente:hover .cliente-ver svg{transform:translateX(3px);}
+  /* Los demos son trabajo enseñable, no cliente en producción: van en su propia
+     franja para que "ya confían en nosotros" siga diciendo la verdad. */
+  .demos-label{font-size:13px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;
+    font-weight:600;margin:22px 0 12px;}
+  /* Dos tarjetas a lo ancho: heredan el auto-fit de .clientes-grid, así que
+     ocupan media fila cada una y alinean sus bordes con los de arriba.
+     Con auto-fill quedaban a 224px, más estrechas y descuadradas. */
+  .demos-grid{margin-bottom:14px;}
+  .demos-grid .cliente-marca.sin-logo{width:62px;}
 
 
   /* Franja aparte para lo que todavía no está entregado: mezclarlo con los
@@ -612,18 +630,20 @@
     <div class="clients-label">Ya confían en nosotros</div>
     <h2 class="clientes-titulo">Negocios que operan todos los días sobre lo que construimos.</h2>
     <div class="clientes-grid">
-      <div class="cliente">
+      <a class="cliente" href="https://vibegoec.com" target="_blank" rel="noopener">
         <div class="cliente-marca compacto"><img src="/assets/clientes/vibego.png" alt="VibeGo" width="78" height="72" decoding="async"></div>
         <b>VibeGo</b>
         <span>Eventos y taquilla</span>
         <p>Vende entradas y las valida sin internet.</p>
-      </div>
-      <div class="cliente">
+        <span class="cliente-ver">Ver la plataforma<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M5 12h13"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </a>
+      <a class="cliente" href="https://canalimena.com" target="_blank" rel="noopener">
         <div class="cliente-marca"><img src="/assets/clientes/canalimena.png" alt="Cañalimeña group" width="180" height="72" decoding="async"></div>
         <b>Cañalimeña</b>
         <span>Hotel y restaurante</span>
         <p>Reservas, cocina y caja en una sola plataforma.</p>
-      </div>
+        <span class="cliente-ver">Ver el sitio<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M5 12h13"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </a>
       <div class="cliente">
         <div class="cliente-marca"><img src="/assets/clientes/burgerbeer.png" alt="Burger Beer" width="223" height="72" decoding="async"></div>
         <b>Burger Beer</b>
@@ -636,6 +656,24 @@
         <span>Cafetería</span>
         <p>Punto de venta y control de inventario.</p>
       </div>
+    </div>
+
+    <div class="demos-label">Demos que puedes ver ahora</div>
+    <div class="clientes-grid demos-grid">
+      <a class="cliente" href="https://agave.andproducciones.com" target="_blank" rel="noopener">
+        <div class="cliente-marca sin-logo"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19v-7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v7"/><path d="M3 19h18"/><path d="M6 10V7a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v3"/><circle cx="8.5" cy="13.5" r="1.5"/></svg></div>
+        <b>Hotel Casa Agave</b>
+        <span>Demo · Hotelería</span>
+        <p>Sitio de una hostería en Baños: habitaciones, galería y reservas.</p>
+        <span class="cliente-ver">Abrir el demo<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M5 12h13"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </a>
+      <a class="cliente" href="https://luxuryhouse.andproducciones.com" target="_blank" rel="noopener">
+        <div class="cliente-marca sin-logo"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></div>
+        <b>Luxury House</b>
+        <span>Demo · Alojamiento</span>
+        <p>Casa de montaña en Baños: cuatro tipos de estancia, fechas y reserva.</p>
+        <span class="cliente-ver">Abrir el demo<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M5 12h13"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </a>
     </div>
 
     <div class="en-desarrollo">
