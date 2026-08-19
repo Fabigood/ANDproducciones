@@ -84,8 +84,8 @@
   }
   nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1180px;margin:0 auto;}
   .logo-wrap{display:flex;align-items:center;gap:10px;}
-  .logo-mark{width:32px;height:32px;border-radius:8px;background:var(--cobalto);display:flex;align-items:center;justify-content:center;}
-  .logo-mark svg{width:58%;height:58%;}
+  .logo-mark{width:34px;height:34px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .logo-mark svg{width:100%;height:100%;}
   .logo-text{display:flex;flex-direction:column;line-height:1.05;}
   .logo-text b{font-family:'Sora',sans-serif;font-weight:700;font-size:16px;letter-spacing:.02em;}
   .logo-text span{font-size:10px;color:var(--muted);letter-spacing:.04em;}
@@ -143,7 +143,12 @@
      sin crear contenedor de scroll, así que el sticky de dentro sigue vivo
      (overflow:hidden sí lo habría roto). */
   .hero-wrap{position:relative;overflow-x:clip;}
-  .sticky-mark{position:sticky;top:0;height:100vh;height:100dvh;display:flex;align-items:center;justify-content:center;z-index:1;pointer-events:none;}
+  /* El margen negativo es lo que impide que la marca se coma una pantalla entera
+     para ella sola: sticky sí ocupa sitio en el flujo, así que sin esto el
+     visitante aterrizaba en un icono flotando sin título ni texto, y el titular
+     quedaba una pantalla más abajo. Con el margen, marca y titular comparten
+     pantalla desde el primer momento. */
+  .sticky-mark{position:sticky;top:0;height:100vh;height:100dvh;margin-bottom:-100vh;margin-bottom:-100dvh;display:flex;align-items:center;justify-content:center;z-index:1;pointer-events:none;}
   .mark-badge{
     width:170px;height:170px;border-radius:30px;
     background:linear-gradient(155deg,var(--cobalto),#0b2e8f);
@@ -161,6 +166,7 @@
   h1.hero-title .accent{color:var(--cobalto);}
   .hero-sub{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;padding-top:26px;border-top:1px solid var(--line);flex-wrap:wrap;}
   .hero-sub p{max-width:440px;font-size:17px;line-height:1.5;color:var(--plata);}
+  .hero-sub p b{color:var(--blanco);font-weight:700;}
   .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
   .btn-primary{background:var(--cobalto);color:var(--blanco);padding:14px 24px;border-radius:100px;font-weight:600;font-size:14px;transition:background .2s,transform .2s;white-space:nowrap;}
   .btn-primary:hover{background:#3a6bff;transform:translateY(-2px);}
@@ -188,11 +194,16 @@
      lejos. Aquí se deja crecer y se recortan los aires. */
   @media (orientation:landscape) and (max-height:620px){
     .hero-part,.bio-part{min-height:auto;}
-    .hero-part{padding-top:96px;padding-bottom:40px;}
-    .bio-part{padding-top:40px;padding-bottom:72px;}
-    .sticky-mark{height:100dvh;}
+    .hero-part{padding-top:76px;padding-bottom:28px;}
+    .bio-part{padding-top:36px;padding-bottom:64px;}
+    .sticky-mark{height:100dvh;margin-bottom:-100dvh;}
     .mark-badge{width:104px;height:104px;border-radius:20px;}
-    h1.hero-title{font-size:clamp(32px,5.4vw,56px);}
+    /* En apaisado sobra alto: se recorta el titular y los aires del bloque
+       inferior para que los botones entren en la primera pantalla. */
+    h1.hero-title{font-size:clamp(27px,4.4vw,44px);}
+    .eyebrow{margin-bottom:12px;font-size:12px;}
+    .hero-sub{padding-top:16px;gap:14px;}
+    .hero-sub p{font-size:15px;max-width:380px;}
   }
 
   /* ---------- MARQUEE ---------- */
@@ -203,6 +214,26 @@
   @keyframes scroll-x{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
 
   .clients-section{padding:clamp(44px,7vw,60px) clamp(18px,5vw,24px);text-align:center;}
+
+  /* Prueba social: lo primero que tiene que convencer, así que va arriba y se
+     lee de un vistazo, sin párrafos. */
+  .clientes-section{padding:clamp(52px,7vw,72px) clamp(18px,5vw,24px);border-bottom:1px solid var(--line-2);}
+  .clientes-section .clients-label{margin-bottom:12px;}
+  .clientes-titulo{font-size:clamp(23px,3.2vw,34px);font-weight:600;letter-spacing:-0.02em;line-height:1.2;max-width:640px;margin-bottom:clamp(26px,4vw,38px);}
+  .clientes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(196px,100%),1fr));gap:14px;margin-bottom:clamp(26px,4vw,36px);}
+  .cliente{background:var(--midnight-2);border:1px solid var(--line-2);border-radius:16px;padding:22px 20px;transition:border-color .25s,transform .25s;}
+  .cliente:hover{border-color:var(--cobalto);transform:translateY(-3px);}
+  .cliente-marca{width:42px;height:42px;border-radius:11px;background:var(--cobalto-soft);color:var(--cobalto-txt);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-size:14px;font-weight:700;letter-spacing:.04em;margin-bottom:14px;}
+  .cliente b{display:block;font-family:'Sora',sans-serif;font-size:16px;font-weight:600;margin-bottom:3px;}
+  .cliente span{display:block;font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--cobalto-txt);margin-bottom:10px;}
+  .cliente p{font-size:13px;color:var(--muted);line-height:1.5;}
+  .cliente.confidencial span{color:var(--muted-2);}
+  .cliente.confidencial .cliente-marca{background:var(--line-2);color:var(--plata);}
+
+  .clientes-cifras{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:16px;overflow:hidden;}
+  .clientes-cifras div{background:var(--midnight);padding:20px 18px;text-align:center;}
+  .clientes-cifras b{display:block;font-family:'Sora',sans-serif;font-size:clamp(24px,3.4vw,30px);font-weight:700;letter-spacing:-0.02em;margin-bottom:5px;}
+  .clientes-cifras span{font-size:12px;color:var(--muted);line-height:1.4;display:block;}
   .clients-label{font-size:13px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:28px;}
   .clients-row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;}
   .client-pill{border:1px solid var(--line);border-radius:100px;padding:10px 20px;font-family:'Sora',sans-serif;font-size:14px;font-weight:600;color:var(--plata);}
@@ -451,7 +482,7 @@
 <header>
   <nav>
     <div class="logo-wrap">
-      <div class="logo-mark"><svg aria-hidden="true" focusable="false" viewBox="0 0 100 100"><path d="M50 8 L92 88 L64 88 L50 60 L36 88 L8 88 Z" fill="#FAFAF8"/><path d="M52 58 L66 58 L48 88 L34 88 Z" fill="#0B1220" opacity=".55"/></svg></div>
+      <div class="logo-mark"><svg aria-hidden="true" focusable="false" viewBox="0 0 100 100"><path d="M50 17 L91 83 L72 83 L50 47.5 L28 83 L9 83 Z" fill="#FAFAF8"/><path d="M30 83 L44.9 59 L55.9 59 L41 83 Z" fill="#1557FF"/></svg></div>
       <div class="logo-text"><b>AND PRODUCCIONES</b><span>TECNOLOGÍA · ESTRATEGIA · CREATIVIDAD</span></div>
     </div>
     <div class="nav-links">
@@ -485,7 +516,7 @@
 <section class="hero-wrap" id="hero">
   <div class="sticky-mark">
     <div class="mark-badge" id="markBadge">
-      <svg aria-hidden="true" focusable="false" viewBox="0 0 100 100"><path d="M50 8 L92 88 L64 88 L50 60 L36 88 L8 88 Z" fill="#FAFAF8"/><path d="M52 58 L66 58 L48 88 L34 88 Z" fill="#0B1220" opacity=".55"/></svg>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 100 100"><path d="M50 17 L91 83 L72 83 L50 47.5 L28 83 L9 83 Z" fill="#FAFAF8"/><path d="M30 83 L44.9 59 L55.9 59 L41 83 Z" fill="#0B1220"/></svg>
     </div>
   </div>
 
@@ -496,10 +527,10 @@
         <h1 class="hero-title">Protegemos <span class="accent">hoy</span>. Conectamos el <span class="accent">futuro</span>.</h1>
       </div>
       <div class="hero-sub">
-        <p>Diseñamos, construimos y protegemos tecnología para organizaciones donde los sistemas son parte directa de la operación.</p>
+        <p>Webs y sistemas que su negocio usa todos los días. Implementación desde <b>$149</b> y servicio desde <b>$9.99 al mes</b>.</p>
         <div class="hero-ctas">
-          <a href="mailto:andproducciones@gmail.com?subject=Consulta%20desde%20andproducciones.com" class="btn-primary">Conversemos sobre un reto real</a>
-          <a href="#planes" class="btn-ghost">Ver planes y precios</a>
+          <a href="#planes" class="btn-primary">Ver planes desde $149</a>
+          <a href="https://wa.me/593984845111?text=Hola%2C%20AND%20Producciones.%20Quiero%20una%20web%20para%20mi%20negocio." class="btn-ghost" target="_blank" rel="noopener">Escribir por WhatsApp</a>
         </div>
       </div>
     </div>
@@ -525,14 +556,48 @@
   </div>
 </div>
 
-<section class="clients-section reveal">
-  <div class="clients-label">Operan con nuestros sistemas</div>
-  <div class="clients-row">
-    <div class="client-pill">VibeGo</div>
-    <div class="client-pill">Canalimeña</div>
-    <div class="client-pill">Burger Beer</div>
-    <div class="client-pill">Calikaphé</div>
-    <div class="client-pill muted">Institución de las Fuerzas Armadas del Ecuador · bajo confidencialidad</div>
+<section class="clientes-section reveal" id="clientes">
+  <div class="container">
+    <div class="clients-label">Ya confían en nosotros</div>
+    <h2 class="clientes-titulo">Negocios que operan todos los días sobre lo que construimos.</h2>
+    <div class="clientes-grid">
+      <div class="cliente">
+        <div class="cliente-marca">VG</div>
+        <b>VibeGo</b>
+        <span>Eventos y taquilla</span>
+        <p>Vende entradas y las valida sin internet.</p>
+      </div>
+      <div class="cliente">
+        <div class="cliente-marca">CA</div>
+        <b>Canalimeña</b>
+        <span>Hotel y restaurante</span>
+        <p>Reservas, cocina y caja en una sola plataforma.</p>
+      </div>
+      <div class="cliente">
+        <div class="cliente-marca">BB</div>
+        <b>Burger Beer</b>
+        <span>Restaurante</span>
+        <p>Pedidos, promociones y cierre por turno.</p>
+      </div>
+      <div class="cliente">
+        <div class="cliente-marca">CK</div>
+        <b>Calikaphé</b>
+        <span>Cafetería</span>
+        <p>Punto de venta y control de inventario.</p>
+      </div>
+      <div class="cliente confidencial">
+        <div class="cliente-marca">FA</div>
+        <b>Fuerzas Armadas</b>
+        <span>Bajo confidencialidad</span>
+        <p>Operación crítica en web, móvil y escritorio.</p>
+      </div>
+    </div>
+    <div class="clientes-cifras">
+      <div><b>4</b><span>marcas operando</span></div>
+      <div><b>3</b><span>plataformas: web, móvil y escritorio</span></div>
+      <div><b>24/7</b><span>sistemas en producción</span></div>
+      <div><b>$149</b><span>para empezar</span></div>
+    </div>
   </div>
 </section>
 
@@ -573,10 +638,45 @@
   </div>
 </section>
 
+<section class="section" id="evidencia" style="border-top:1px solid var(--line-2);">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-num">02 — Lo que ya construimos</div>
+      <h2>Tecnología operando en entornos reales.</h2>
+    </div>
+    <div class="case-grid reveal">
+      <div class="case-card">
+        <div class="case-tag">Bajo confidencialidad</div>
+        <h3>Operaciones críticas</h3>
+        <div class="case-org">Fuerzas Armadas del Ecuador</div>
+        <p>Logística, personal, gestión documental y control de acceso, con web, móvil y escritorio sobre la misma información. Reemplazó al sistema anterior sin apagarlo: quedó ejecutable durante toda la transición.</p>
+        <div class="case-chips"><span class="chip">Acceso por rol y alcance</span><span class="chip">Trazabilidad</span></div>
+        <div class="case-note">Sin nombre de unidad, arquitectura ni cifras, por confidencialidad.</div>
+      </div>
+      <div class="case-card">
+        <div class="case-tag">Producto propio</div>
+        <h3>Plataforma transaccional</h3>
+        <div class="case-org">VibeGo</div>
+        <p>Venta en taquilla y en calle, equipos comerciales con caja, liquidación, arqueo, pagos, recibos y apps móviles. Valida entradas sin conexión y reconcilia al recuperar señal.</p>
+        <div class="case-chips"><span class="chip">Opera sin internet</span><span class="chip">Multiempresa</span></div>
+        <div class="case-stack">Angular SSR · Node · Prisma · PostgreSQL · Capacitor</div>
+      </div>
+      <div class="case-card">
+        <div class="case-tag">Hotelería y restauración</div>
+        <h3>Grupo multimarca</h3>
+        <div class="case-org">Canalimeña</div>
+        <p>Reservas, punto de venta, comandas en cocina, promociones, portal de wifi y utilidad por unidad de negocio, con tres marcas sobre una sola plataforma.</p>
+        <div class="case-chips"><span class="chip">Cada marca, su RUC</span><span class="chip">Cierre por turno</span></div>
+        <div class="case-stack">Angular · Node · Prisma · PostgreSQL · Redis</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="section planes-section" id="planes">
   <div class="container">
     <div class="section-head reveal">
-      <div class="section-num">02 — Soluciones web para negocios</div>
+      <div class="section-num">03 — Planes y precios</div>
       <h2>Una plataforma que crece con tu negocio.</h2>
       <p>Diseño personalizado y tecnología simple para restaurantes, tiendas, servicios profesionales, consultorios, alojamientos y emprendimientos.</p>
     </div>
@@ -821,6 +921,32 @@
   </div>
 </section>
 
+<section class="section piloto-section" id="piloto">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-num">04 — Piloto para organizaciones · 6 semanas</div>
+      <h2>Un problema real, y evidencia sobre la mesa.</h2>
+    </div>
+    <div class="steps-row reveal">
+      <div class="step-pill"><b>01</b>Entender</div>
+      <div class="step-pill"><b>02</b>Diseñar</div>
+      <div class="step-pill"><b>03</b>Construir</div>
+      <div class="step-pill"><b>04</b>Asegurar</div>
+      <div class="step-pill"><b>05</b>Validar</div>
+      <div class="step-pill"><b>06</b>Operar</div>
+    </div>
+    <div class="piloto-grid reveal">
+      <div class="piloto-card"><h3>Problema</h3><p>Uno específico, elegido por ustedes.</p></div>
+      <div class="piloto-card"><h3>Alcance</h3><p>Cerrado por escrito antes de empezar.</p></div>
+      <div class="piloto-card"><h3>Responsables</h3><p>Un interlocutor por lado.</p></div>
+      <div class="piloto-card"><h3>Línea base e indicadores</h3><p>Cómo está hoy y con qué se compara.</p></div>
+      <div class="piloto-card"><h3>Entregable</h3><p>Funcionando, con código y documentación.</p></div>
+      <div class="piloto-card"><h3>Seguridad</h3><p>Revisión incluida, con informe de hallazgos.</p></div>
+    </div>
+    <p class="piloto-note reveal"><b>La inversión inicial del piloto corre por cuenta de AND Producciones.</b> La confianza técnica se demuestra trabajando: preferimos enseñar nuestra forma de trabajar antes de pedir una relación de largo plazo.</p>
+  </div>
+</section>
+
 <section class="section" id="retos">
   <div class="container">
     <div class="section-head reveal">
@@ -911,41 +1037,6 @@
   </div>
 </section>
 
-<section class="section" id="evidencia" style="border-top:1px solid var(--line-2);">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="section-num">De la arquitectura a producción</div>
-      <h2>Tecnología operando en entornos reales.</h2>
-    </div>
-    <div class="case-grid reveal">
-      <div class="case-card">
-        <div class="case-tag">Bajo confidencialidad</div>
-        <h3>Operaciones críticas</h3>
-        <div class="case-org">Fuerzas Armadas del Ecuador</div>
-        <p>Logística, personal, gestión documental y control de acceso, con web, móvil y escritorio sobre la misma información. Reemplazó al sistema anterior sin apagarlo: quedó ejecutable durante toda la transición.</p>
-        <div class="case-chips"><span class="chip">Acceso por rol y alcance</span><span class="chip">Trazabilidad</span></div>
-        <div class="case-note">Sin nombre de unidad, arquitectura ni cifras, por confidencialidad.</div>
-      </div>
-      <div class="case-card">
-        <div class="case-tag">Producto propio</div>
-        <h3>Plataforma transaccional</h3>
-        <div class="case-org">VibeGo</div>
-        <p>Venta en taquilla y en calle, equipos comerciales con caja, liquidación, arqueo, pagos, recibos y apps móviles. Valida entradas sin conexión y reconcilia al recuperar señal.</p>
-        <div class="case-chips"><span class="chip">Opera sin internet</span><span class="chip">Multiempresa</span></div>
-        <div class="case-stack">Angular SSR · Node · Prisma · PostgreSQL · Capacitor</div>
-      </div>
-      <div class="case-card">
-        <div class="case-tag">Hotelería y restauración</div>
-        <h3>Grupo multimarca</h3>
-        <div class="case-org">Canalimeña</div>
-        <p>Reservas, punto de venta, comandas en cocina, promociones, portal de wifi y utilidad por unidad de negocio, con tres marcas sobre una sola plataforma.</p>
-        <div class="case-chips"><span class="chip">Cada marca, su RUC</span><span class="chip">Cierre por turno</span></div>
-        <div class="case-stack">Angular · Node · Prisma · PostgreSQL · Redis</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="section" style="padding-top:0;">
   <div class="container">
     <div class="section-head reveal">
@@ -1001,32 +1092,6 @@
         <p>Diseñamos tecnología considerando no solo el escenario ideal, sino lo que ocurre cuando las condiciones cambian.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<section class="section piloto-section" id="piloto">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="section-num">Piloto de validación · 6 semanas</div>
-      <h2>Un problema real, y evidencia sobre la mesa.</h2>
-    </div>
-    <div class="steps-row reveal">
-      <div class="step-pill"><b>01</b>Entender</div>
-      <div class="step-pill"><b>02</b>Diseñar</div>
-      <div class="step-pill"><b>03</b>Construir</div>
-      <div class="step-pill"><b>04</b>Asegurar</div>
-      <div class="step-pill"><b>05</b>Validar</div>
-      <div class="step-pill"><b>06</b>Operar</div>
-    </div>
-    <div class="piloto-grid reveal">
-      <div class="piloto-card"><h3>Problema</h3><p>Uno específico, elegido por ustedes.</p></div>
-      <div class="piloto-card"><h3>Alcance</h3><p>Cerrado por escrito antes de empezar.</p></div>
-      <div class="piloto-card"><h3>Responsables</h3><p>Un interlocutor por lado.</p></div>
-      <div class="piloto-card"><h3>Línea base e indicadores</h3><p>Cómo está hoy y con qué se compara.</p></div>
-      <div class="piloto-card"><h3>Entregable</h3><p>Funcionando, con código y documentación.</p></div>
-      <div class="piloto-card"><h3>Seguridad</h3><p>Revisión incluida, con informe de hallazgos.</p></div>
-    </div>
-    <p class="piloto-note reveal"><b>La inversión inicial del piloto corre por cuenta de AND Producciones.</b> La confianza técnica se demuestra trabajando: preferimos enseñar nuestra forma de trabajar antes de pedir una relación de largo plazo.</p>
   </div>
 </section>
 
