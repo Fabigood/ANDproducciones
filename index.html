@@ -66,7 +66,7 @@
   h1,h2,h3,.display{font-family:'Sora',sans-serif;}
   a{color:inherit;text-decoration:none;}
   ul{list-style:none;}
-  .container{max-width:1180px;margin:0 auto;padding:0 clamp(18px,5vw,24px);}
+  .container{max-width:1280px;margin:0 auto;padding:0 clamp(18px,5vw,24px);}
   ::selection{background:var(--cobalto);color:var(--blanco);}
   :focus-visible{outline:2px solid var(--cobalto);outline-offset:3px;}
   @media (prefers-reduced-motion: reduce){ *{transition:none !important; animation:none !important;} }
@@ -159,7 +159,7 @@
   .mark-badge svg{width:48%;height:48%;}
 
   .hero-inner{position:relative;z-index:2;}
-  .hero-part{min-height:100vh;min-height:100dvh;padding:120px clamp(18px,5vw,24px) 48px;max-width:1180px;margin:0 auto;display:flex;flex-direction:column;justify-content:space-between;}
+  .hero-part{min-height:100vh;min-height:100dvh;padding:104px clamp(18px,5vw,24px) 36px;max-width:1180px;margin:0 auto;display:flex;flex-direction:column;justify-content:space-between;}
   .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:22px;}
   .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cobalto);display:inline-block;box-shadow:0 0 12px var(--cobalto);}
   h1.hero-title{font-weight:700;font-size:clamp(38px,7.2vw,92px);line-height:1.04;letter-spacing:-0.03em;max-width:960px;}
@@ -173,7 +173,7 @@
   .btn-ghost{border:1px solid var(--line);color:var(--blanco);padding:14px 24px;border-radius:100px;font-weight:600;font-size:14px;transition:border-color .2s, background .2s;white-space:nowrap;}
   .btn-ghost:hover{border-color:var(--cobalto);background:var(--cobalto-soft);}
 
-  .bio-part{min-height:100vh;min-height:100dvh;padding:48px clamp(18px,5vw,24px) 110px;max-width:1180px;margin:0 auto;display:flex;align-items:flex-end;justify-content:space-between;gap:50px;flex-wrap:wrap;}
+  .bio-part{min-height:auto;padding:clamp(40px,7vw,72px) clamp(18px,5vw,24px) clamp(56px,9vw,96px);max-width:1180px;margin:0 auto;display:flex;align-items:flex-end;justify-content:space-between;gap:50px;flex-wrap:wrap;}
   .bio-left{flex:1 1 260px;max-width:300px;}
   .bio-left .kicker{font-size:13px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:10px;}
   .bio-left h2{font-size:clamp(26px,3.4vw,36px);font-weight:600;letter-spacing:-0.02em;line-height:1.15;}
@@ -217,10 +217,10 @@
 
   /* Prueba social: lo primero que tiene que convencer, así que va arriba y se
      lee de un vistazo, sin párrafos. */
-  .clientes-section{padding:clamp(52px,7vw,72px) clamp(18px,5vw,24px);border-bottom:1px solid var(--line-2);}
+  .clientes-section{padding:clamp(36px,5vw,56px) clamp(18px,5vw,24px);border-bottom:1px solid var(--line-2);}
   .clientes-section .clients-label{margin-bottom:12px;}
-  .clientes-titulo{font-size:clamp(23px,3.2vw,34px);font-weight:600;letter-spacing:-0.02em;line-height:1.2;max-width:640px;margin-bottom:clamp(26px,4vw,38px);}
-  .clientes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(196px,100%),1fr));gap:14px;margin-bottom:clamp(26px,4vw,36px);}
+  .clientes-titulo{font-size:clamp(23px,3.2vw,34px);font-weight:600;letter-spacing:-0.02em;line-height:1.2;max-width:640px;margin-bottom:clamp(18px,2.6vw,26px);}
+  .clientes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(196px,100%),1fr));gap:12px;margin-bottom:14px;}
   .cliente{background:var(--midnight-2);border:1px solid var(--line-2);border-radius:16px;padding:22px 20px;transition:border-color .25s,transform .25s;}
   .cliente:hover{border-color:var(--cobalto);transform:translateY(-3px);}
   /* Caja de altura fija para que el texto de todas las tarjetas arranque a la
@@ -242,7 +242,7 @@
   /* Franja aparte para lo que todavía no está entregado: mezclarlo con los
      clientes que ya operan haría que "ya confían en nosotros" dijese algo que
      no es cierto. */
-  .en-desarrollo{display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:linear-gradient(160deg,rgba(21,87,255,.08),transparent 60%),var(--midnight-2);border:1px solid rgba(21,87,255,.3);border-radius:16px;padding:20px 22px;margin-bottom:clamp(26px,4vw,36px);}
+  .en-desarrollo{display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:linear-gradient(160deg,rgba(21,87,255,.08),transparent 60%),var(--midnight-2);border:1px solid rgba(21,87,255,.3);border-radius:16px;padding:16px 18px;margin-bottom:14px;}
   .ed-icono{width:46px;height:46px;border-radius:12px;background:var(--cobalto-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
   .ed-icono svg{width:23px;height:23px;stroke:var(--cobalto-txt);}
   .ed-texto{flex:1 1 300px;min-width:0;}
@@ -267,11 +267,23 @@
   .client-pill.muted{color:var(--muted-2);font-weight:500;border-radius:14px;max-width:100%;}
 
   /* ---------- SECTION GENERIC ---------- */
-  .section{padding:clamp(62px,9vw,110px) clamp(18px,5vw,24px);}
-  .section-head{max-width:720px;margin-bottom:clamp(34px,5vw,56px);}
+  .section{padding:clamp(40px,5.6vw,72px) clamp(18px,5vw,24px);}
+  /* El bloque institucional del final es de lectura opcional: se le da la mitad
+     de aire que a las secciones comerciales para no alargar la página. */
+  .section.compacta{padding:clamp(26px,3.4vw,44px) clamp(18px,5vw,24px);}
+  .compacta .section-head{margin-bottom:clamp(16px,2.2vw,24px);}
+  .compacta .section-head h2{font-size:clamp(24px,2.9vw,34px);}
+  .compacta .reto-card,.compacta .disc-card{padding:clamp(18px,2.6vw,24px);}
+  .compacta .cap-card,.compacta .mitad-card{padding:clamp(18px,2.8vw,26px);}
+  .section-head{max-width:720px;margin-bottom:clamp(22px,3.2vw,36px);}
   .section-num{font-size:13px;font-weight:600;color:var(--cobalto-txt);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;}
   .section-head h2{font-size:clamp(30px,4vw,46px);font-weight:600;letter-spacing:-0.02em;line-height:1.15;}
-  .section-head p{margin-top:16px;font-size:17px;color:var(--muted);line-height:1.5;max-width:560px;}
+  .section-head p{margin-top:12px;font-size:16px;color:var(--muted);line-height:1.5;max-width:560px;}
+  @media (min-width:1040px){
+    .section-head:has(p){display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(32px,4vw,64px);align-items:end;max-width:none;}
+    .section-head:has(p) .section-num{grid-column:1 / -1;}
+    .section-head:has(p) p{margin-top:0;padding-bottom:6px;}
+  }
 
   /* Servicios */
   .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));gap:16px;}
@@ -291,10 +303,13 @@
 
 
   /* ---------- QUOTE SCRUB ---------- */
-  .quote-wrap{position:relative;height:150vh;height:150dvh;}
-  .quote-sticky{position:sticky;top:0;height:100vh;height:100dvh;display:flex;align-items:center;justify-content:center;padding:0 clamp(18px,5vw,24px);}
+  /* Una frase no justifica una pantalla entera de scroll. Deja de ser sticky y
+     pasa a bloque normal; el barrido de palabras se dispara al entrar en
+     pantalla, así que el efecto se conserva sin el recorrido en vacío. */
+  .quote-wrap{position:relative;}
+  .quote-sticky{display:flex;align-items:center;justify-content:center;padding:clamp(44px,6vw,78px) clamp(18px,5vw,24px);}
   #quoteText{max-width:820px;font-family:'Sora',sans-serif;font-size:clamp(24px,3.8vw,42px);line-height:1.32;font-weight:600;letter-spacing:-0.02em;}
-  #quoteText .word{color:var(--muted-2);transition:color .08s linear;}
+  #quoteText .word{color:var(--muted-2);transition:color .5s ease;}
   #quoteText .word.lit{color:var(--blanco);}
   #quoteText .word.accent-word{color:var(--cobalto) !important;}
 
@@ -310,10 +325,10 @@
   @media (max-width:760px){.mitades-grid{grid-template-columns:1fr;}}
 
   /* Marcos de referencia */
-  .marcos-section{padding:clamp(48px,7vw,70px) clamp(18px,5vw,24px);text-align:center;border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2);}
-  .marcos-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:22px;}
+  .marcos-section{padding:clamp(24px,3vw,36px) clamp(18px,5vw,24px);text-align:center;border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2);}
+  .marcos-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:16px;}
   .marco-badge{border:1px solid var(--line);border-radius:10px;padding:10px 18px;font-family:'Sora',sans-serif;font-size:13px;font-weight:600;color:var(--plata);}
-  .marcos-section p{max-width:640px;margin:0 auto;font-size:14px;color:var(--muted);line-height:1.6;}
+  .marcos-section p{max-width:680px;margin:0 auto;font-size:13px;color:var(--muted);line-height:1.5;}
   .marcos-section p b{color:var(--blanco);}
 
   /* Arquitectura */
@@ -339,29 +354,29 @@
 
 
   /* Capacidades */
-  .cap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(288px,100%),1fr));gap:16px;margin-bottom:40px;}
+  .cap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(288px,100%),1fr));gap:16px;margin-bottom:26px;}
   .cap-card{background:var(--midnight-2);border:1px solid var(--line-2);border-radius:16px;padding:clamp(20px,3vw,24px);}
   .cap-card h3{font-size:16px;font-weight:600;margin-bottom:8px;letter-spacing:-0.01em;}
   .cap-card p{font-size:13px;color:var(--muted);line-height:1.5;}
-  .stack-lists{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:24px;padding-top:32px;border-top:1px solid var(--line-2);}
+  .stack-lists{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:20px;padding-top:22px;border-top:1px solid var(--line-2);}
   .stack-list b{display:block;font-family:'Sora',sans-serif;font-size:13px;font-weight:600;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;margin-bottom:12px;}
   .stack-list .tag-row{display:flex;flex-wrap:wrap;gap:8px;}
   .stack-list .tag-row span{font-size:12px;padding:5px 10px;border-radius:6px;background:var(--line-2);color:var(--plata);}
-  .stack-note{margin-top:28px;font-size:13px;color:var(--muted-2);line-height:1.6;max-width:700px;}
+  .stack-note{margin-top:20px;font-size:13px;color:var(--muted-2);line-height:1.55;max-width:860px;}
 
 
   /* Disciplinas */
-  .disc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(270px,100%),1fr));gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:20px;overflow:hidden;margin-bottom:28px;}
+  .disc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(270px,100%),1fr));gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:20px;overflow:hidden;margin-bottom:20px;}
   .disc-card{background:var(--midnight-2);padding:clamp(22px,3.6vw,32px);}
   .disc-card h3{font-size:18px;font-weight:600;margin-bottom:16px;}
   .disc-card ul li{font-size:14px;color:var(--plata);line-height:1.7;position:relative;padding-left:16px;}
   .disc-card ul li::before{content:"—";position:absolute;left:0;color:var(--muted-2);}
-  .disc-note{font-size:14px;color:var(--muted);line-height:1.6;max-width:760px;}
+  .disc-note{font-size:14px;color:var(--muted);line-height:1.55;max-width:900px;}
 
 
   /* Continuidad */
   .cont-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,60px);align-items:center;}
-  .cont-list li{font-size:16px;color:var(--plata);padding:12px 0;border-bottom:1px solid var(--line-2);}
+  .cont-list li{font-size:16px;color:var(--plata);padding:9px 0;border-bottom:1px solid var(--line-2);}
   .cont-list li:first-child{padding-top:0;}
   .cont-final{font-family:'Sora',sans-serif;font-size:22px;font-weight:600;padding-top:18px;}
   .cont-right p{font-size:16px;color:var(--muted);line-height:1.6;}
@@ -369,14 +384,14 @@
 
   /* Piloto */
   .piloto-section{background:var(--midnight-2);border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2);}
-  .steps-row{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;margin-bottom:clamp(32px,5vw,48px);background:var(--line-2);border:1px solid var(--line-2);border-radius:100px;overflow:hidden;}
+  .steps-row{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;margin-bottom:clamp(20px,3vw,30px);background:var(--line-2);border:1px solid var(--line-2);border-radius:100px;overflow:hidden;}
   .step-pill{background:var(--midnight-2);text-align:center;padding:14px 10px;font-size:13px;font-weight:600;color:var(--muted);}
   .step-pill b{color:var(--cobalto-txt);font-family:'Sora',sans-serif;margin-right:6px;}
-  .piloto-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(272px,100%),1fr));gap:16px;margin-bottom:40px;}
+  .piloto-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(272px,100%),1fr));gap:14px;margin-bottom:24px;}
   .piloto-card{background:var(--midnight);border:1px solid var(--line-2);border-radius:16px;padding:clamp(20px,3vw,24px);}
   .piloto-card h3{font-size:16px;font-weight:600;margin-bottom:8px;}
   .piloto-card p{font-size:13px;color:var(--muted);line-height:1.5;}
-  .piloto-note{max-width:680px;font-size:15px;color:var(--plata);line-height:1.6;}
+  .piloto-note{max-width:900px;font-size:15px;color:var(--plata);line-height:1.55;}
   .piloto-note b{color:var(--blanco);}
   @media (max-width:860px){.steps-row{grid-template-columns:repeat(3,1fr);border-radius:16px;}}
   @media (max-width:440px){.steps-row{grid-template-columns:repeat(2,1fr);}}
@@ -404,17 +419,17 @@
   /* ---------- PLANES PARA NEGOCIOS ---------- */
   .planes-section{border-top:1px solid var(--line-2);background:var(--midnight-2);}
   .bloque-titulo{font-family:'Sora',sans-serif;font-size:clamp(21px,2.6vw,26px);font-weight:600;letter-spacing:-0.01em;margin-bottom:6px;}
-  .bloque-sub{font-size:15px;color:var(--muted);line-height:1.55;max-width:640px;margin-bottom:26px;}
-  .bloque-sep{margin-top:clamp(46px,6vw,68px);}
+  .bloque-sub{font-size:15px;color:var(--muted);line-height:1.55;max-width:640px;margin-bottom:18px;}
+  .bloque-sep{margin-top:clamp(30px,4vw,48px);}
 
   /* Tres pasos + resumen de precios */
-  .tres-pasos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr));gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:16px;overflow:hidden;margin-bottom:16px;}
-  .paso{background:var(--midnight);padding:22px 24px;}
+  .tres-pasos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr));gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:16px;overflow:hidden;margin-bottom:14px;}
+  .paso{background:var(--midnight);padding:18px 20px;}
   .paso b{font-family:'Sora',sans-serif;font-size:13px;color:var(--cobalto-txt);display:block;margin-bottom:8px;}
   .paso h3{font-size:16px;font-weight:600;margin-bottom:4px;}
   .paso p{font-size:13px;color:var(--muted);}
 
-  .resumen-precios{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:16px;margin-bottom:clamp(38px,5vw,54px);}
+  .resumen-precios{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:14px;margin-bottom:clamp(24px,3.4vw,36px);}
   .resumen-card{background:var(--midnight);border:1px solid var(--line-2);border-radius:16px;padding:24px;}
   .resumen-card .et{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:10px;}
   .resumen-card .cifra{font-family:'Sora',sans-serif;font-size:26px;font-weight:700;display:block;margin-bottom:8px;}
@@ -429,9 +444,9 @@
   .plan-precio{font-family:'Sora',sans-serif;font-size:clamp(30px,4vw,38px);font-weight:700;letter-spacing:-0.02em;line-height:1;}
   .plan-precio small{font-size:14px;font-weight:600;color:var(--muted);letter-spacing:0;}
   .plan-anual{font-size:13px;color:var(--muted);margin-top:6px;}
-  .plan-para{font-size:14px;color:var(--plata);line-height:1.5;margin:14px 0 18px;padding-bottom:18px;border-bottom:1px solid var(--line-2);}
+  .plan-para{font-size:14px;color:var(--plata);line-height:1.45;margin:12px 0 14px;padding-bottom:14px;border-bottom:1px solid var(--line-2);}
   .plan ul{margin-bottom:18px;}
-  .plan ul li{position:relative;padding-left:22px;font-size:14px;color:var(--plata);line-height:1.5;margin-bottom:10px;}
+  .plan ul li{position:relative;padding-left:22px;font-size:14px;color:var(--plata);line-height:1.45;margin-bottom:8px;}
   .plan ul li::before{content:"";position:absolute;left:2px;top:7px;width:7px;height:7px;border-radius:2px;background:var(--cobalto);}
   .plan-cierre{margin-top:auto;padding-top:16px;border-top:1px solid var(--line-2);font-size:12px;color:var(--muted);line-height:1.5;}
   .plan-cta{display:block;margin-top:16px;text-align:center;padding:12px;border-radius:100px;font-size:13px;font-weight:600;border:1px solid var(--line);transition:border-color .2s,background .2s;}
@@ -459,7 +474,7 @@
   .tabla-planes td.si{color:var(--blanco);font-weight:600;}
   .tabla-planes tr:last-child th,.tabla-planes tr:last-child td{border-bottom:none;}
   .tabla-planes tbody tr:hover td,.tabla-planes tbody tr:hover th{background:rgba(250,250,248,.02);}
-  .tabla-nota{margin-top:16px;font-size:13px;color:var(--muted);line-height:1.6;max-width:760px;}
+  .tabla-nota{margin-top:14px;font-size:13px;color:var(--muted);line-height:1.55;max-width:900px;}
   .scroll-hint{display:none;margin-top:10px;font-size:12px;color:var(--muted-2);}
   @media (max-width:620px){.scroll-hint{display:block;}}
 
@@ -482,17 +497,17 @@
   .proceso-item p{font-size:13px;color:var(--muted);line-height:1.5;}
 
   /* Contacto */
-  .contacto-section{padding:clamp(70px,10vw,120px) clamp(18px,5vw,24px);text-align:center;border-top:1px solid var(--line-2);}
-  .contacto-section h2{font-size:clamp(30px,4.4vw,48px);font-weight:600;letter-spacing:-0.02em;margin-bottom:18px;max-width:680px;margin-left:auto;margin-right:auto;}
-  .contacto-section .lead{font-size:17px;color:var(--muted);line-height:1.55;max-width:520px;margin:0 auto 40px;}
-  .contacto-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:16px;max-width:720px;margin:0 auto 28px;}
+  .contacto-section{padding:clamp(46px,6.5vw,80px) clamp(18px,5vw,24px);text-align:center;border-top:1px solid var(--line-2);}
+  .contacto-section h2{font-size:clamp(27px,3.8vw,42px);font-weight:600;letter-spacing:-0.02em;margin-bottom:14px;max-width:860px;margin-left:auto;margin-right:auto;}
+  .contacto-section .lead{font-size:16px;color:var(--muted);line-height:1.55;max-width:520px;margin:0 auto 26px;}
+  .contacto-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:16px;max-width:840px;margin:0 auto 22px;}
   .contacto-card{display:flex;align-items:center;gap:16px;text-align:left;background:var(--midnight-2);border:1px solid var(--line-2);border-radius:16px;padding:22px clamp(18px,3vw,24px);transition:border-color .25s,transform .25s;}
   .contacto-card:hover{border-color:var(--cobalto);transform:translateY(-3px);}
   .contacto-card .ic{width:44px;height:44px;border-radius:12px;background:var(--cobalto-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
   .contacto-card .ic svg{width:20px;height:20px;stroke:var(--cobalto-txt);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
   .contacto-card b{display:block;font-family:'Sora',sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
   .contacto-card span{font-size:15px;font-weight:600;color:var(--blanco);word-break:break-word;}
-  .contacto-nota{font-size:14px;color:var(--muted);max-width:560px;margin:0 auto;line-height:1.6;}
+  .contacto-nota{font-size:14px;color:var(--muted);max-width:640px;margin:0 auto;line-height:1.55;}
 
 
   .footer-links{display:flex;gap:18px;flex-wrap:wrap;}
@@ -979,7 +994,7 @@
   </div>
 </section>
 
-<section class="section" id="retos">
+<section class="section compacta" id="retos">
   <div class="container">
     <div class="section-head reveal">
       <div class="section-num">Retos de escala</div>
@@ -1002,7 +1017,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section compacta">
   <div class="container">
     <div class="section-head reveal">
       <div class="section-num">Proteger lo que importa. Potenciar lo que construye el futuro.</div>
@@ -1034,7 +1049,7 @@
   </div>
 </section>
 
-<section class="marcos-section reveal">
+<section class="marcos-section compacta reveal">
   <div class="clients-label">Marcos de referencia</div>
   <div class="marcos-row">
     <div class="marco-badge">ISO/IEC 27001</div>
@@ -1046,7 +1061,7 @@
   <p>Trabajamos alineados con estos controles — accesos por rol, bitácora, cifrado, gestión de secretos y respaldos. <b>Certificación ISO/IEC 27001 en proceso.</b></p>
 </section>
 
-<section class="section">
+<section class="section compacta">
   <div class="container">
     <div class="section-head reveal">
       <div class="section-num">Pensamiento arquitectónico</div>
@@ -1069,7 +1084,7 @@
   </div>
 </section>
 
-<section class="section" style="padding-top:0;">
+<section class="section compacta" style="padding-top:0;">
   <div class="container">
     <div class="section-head reveal">
       <div class="section-num">Capacidades de ingeniería</div>
@@ -1092,7 +1107,7 @@
   </div>
 </section>
 
-<section class="section" style="border-top:1px solid var(--line-2);">
+<section class="section compacta" style="border-top:1px solid var(--line-2);">
   <div class="container">
     <div class="section-head reveal">
       <div class="section-num">Diferentes disciplinas. Una misma responsabilidad.</div>
@@ -1106,7 +1121,7 @@
   </div>
 </section>
 
-<section class="section">
+<section class="section compacta">
   <div class="container">
     <div class="cont-layout reveal">
       <div>
@@ -1349,21 +1364,6 @@
     setVisibility(heroPart, 1);
     setVisibility(bioPart, 1);
 
-    // quote scrub
-    const r2 = quoteWrap.getBoundingClientRect();
-    const total2 = Math.max(1, quoteWrap.offsetHeight - vh);
-    const p2 = clamp((-r2.top)/total2, 0, 1);
-    const revealCount = Math.floor(p2*words.length*1.15);
-    words.forEach((w,i)=>{
-      if(i<revealCount){
-        w.classList.add('lit');
-        if(w.classList.contains('accent-candidate')) w.classList.add('accent-word');
-      } else {
-        w.classList.remove('lit');
-        w.classList.remove('accent-word');
-      }
-    });
-
     ticking = false;
   }
   function onScroll(){ if(!ticking){ requestAnimationFrame(update); ticking = true; } }
@@ -1374,10 +1374,7 @@
       window.removeEventListener('scroll', onScroll);
       window.removeEventListener('resize', onScroll);
       markBadge.style.transform = '';
-      words.forEach(w=>{
-        w.classList.add('lit');
-        if(w.classList.contains('accent-candidate')) w.classList.add('accent-word');
-      });
+
     } else {
       window.addEventListener('scroll', onScroll, {passive:true});
       window.addEventListener('resize', onScroll);
@@ -1407,6 +1404,26 @@
   });
 
   /* ---- reveal on scroll ---- */
+  /* La frase se enciende palabra a palabra cuando entra en pantalla. Antes esto
+     iba atado al scroll y obligaba a reservarle una pantalla entera. */
+  function encenderCita(escalonado){
+    words.forEach((w,i)=>{
+      const prender=()=>{
+        w.classList.add('lit');
+        if(w.classList.contains('accent-candidate')) w.classList.add('accent-word');
+      };
+      escalonado ? setTimeout(prender, i*55) : prender();
+    });
+  }
+  if(reduceMotion.matches){
+    encenderCita(false);
+  } else {
+    const ioCita = new IntersectionObserver((es)=>{
+      es.forEach(e=>{ if(e.isIntersecting){ encenderCita(true); ioCita.disconnect(); } });
+    }, {threshold:0.35});
+    ioCita.observe(quoteEl);
+  }
+
   if(reduceMotion.matches){
     document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
   } else {
