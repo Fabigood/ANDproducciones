@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>AND Producciones — Software, ciberseguridad y operación crítica</title>
-<meta name="description" content="Diseñamos, construimos y protegemos tecnología para organizaciones donde los sistemas son parte directa de la operación. Tecnología, estrategia y creatividad.">
+<meta name="description" content="Soluciones web para negocios desde $149, y software, ciberseguridad y operación crítica para organizaciones donde los sistemas son parte directa de la operación.">
 <link rel="canonical" href="https://andproducciones.com/">
 <meta name="theme-color" content="#0B1220">
 <meta name="author" content="AND Producciones">
@@ -21,14 +21,14 @@
 <meta property="og:site_name" content="AND Producciones">
 <meta property="og:locale" content="es_EC">
 <meta property="og:title" content="AND Producciones — Software, ciberseguridad y operación crítica">
-<meta property="og:description" content="Diseñamos, construimos y protegemos tecnología para organizaciones donde los sistemas son parte directa de la operación.">
+<meta property="og:description" content="Soluciones web para negocios desde $149. Y software, ciberseguridad y operación crítica para organizaciones donde los sistemas son parte de la operación.">
 <meta property="og:image" content="https://andproducciones.com/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="AND Producciones — Protegemos hoy. Conectamos el futuro.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AND Producciones — Software, ciberseguridad y operación crítica">
-<meta name="twitter:description" content="Diseñamos, construimos y protegemos tecnología para organizaciones donde los sistemas son parte directa de la operación.">
+<meta name="twitter:description" content="Soluciones web para negocios desde $149. Y software, ciberseguridad y operación crítica para organizaciones donde los sistemas son parte de la operación.">
 <meta name="twitter:image" content="https://andproducciones.com/assets/og-image.jpg">
 <!-- Tipografía servida desde nuestro propio dominio: sin peticiones a terceros. -->
 <link rel="preload" href="/fonts/manrope-400-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -337,6 +337,87 @@
   /* Salto al contenido: invisible hasta que recibe foco por teclado. */
   .skip-link{position:absolute;left:-9999px;top:0;z-index:200;background:var(--cobalto);color:var(--blanco);padding:12px 20px;border-radius:0 0 10px 0;font-weight:600;font-size:14px;}
   .skip-link:focus{left:0;}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
+
+  /* ---------- PLANES PARA NEGOCIOS ---------- */
+  .planes-section{border-top:1px solid var(--line-2);background:var(--midnight-2);}
+  .bloque-titulo{font-family:'Sora',sans-serif;font-size:clamp(21px,2.6vw,26px);font-weight:600;letter-spacing:-0.01em;margin-bottom:6px;}
+  .bloque-sub{font-size:15px;color:var(--muted);line-height:1.55;max-width:640px;margin-bottom:26px;}
+  .bloque-sep{margin-top:clamp(46px,6vw,68px);}
+
+  /* Tres pasos + resumen de precios */
+  .tres-pasos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr));gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:16px;overflow:hidden;margin-bottom:16px;}
+  .paso{background:var(--midnight);padding:22px 24px;}
+  .paso b{font-family:'Sora',sans-serif;font-size:13px;color:var(--cobalto-txt);display:block;margin-bottom:8px;}
+  .paso h3{font-size:16px;font-weight:600;margin-bottom:4px;}
+  .paso p{font-size:13px;color:var(--muted);}
+
+  .resumen-precios{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:16px;margin-bottom:clamp(38px,5vw,54px);}
+  .resumen-card{background:var(--midnight);border:1px solid var(--line-2);border-radius:16px;padding:24px;}
+  .resumen-card .et{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:10px;}
+  .resumen-card .cifra{font-family:'Sora',sans-serif;font-size:26px;font-weight:700;display:block;margin-bottom:8px;}
+  .resumen-card p{font-size:13px;color:var(--muted);line-height:1.55;}
+
+  /* Tarjetas de plan */
+  .planes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(268px,100%),1fr));gap:16px;align-items:start;}
+  .plan{position:relative;display:flex;flex-direction:column;background:var(--midnight);border:1px solid var(--line-2);border-radius:18px;padding:clamp(22px,3vw,28px);height:100%;}
+  .plan.destacado{border-color:var(--cobalto);}
+  .plan-badge{position:absolute;top:-1px;right:18px;transform:translateY(-50%);background:var(--cobalto);color:var(--blanco);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:100px;white-space:nowrap;}
+  .plan-nombre{font-family:'Sora',sans-serif;font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cobalto-txt);margin-bottom:12px;}
+  .plan-precio{font-family:'Sora',sans-serif;font-size:clamp(30px,4vw,38px);font-weight:700;letter-spacing:-0.02em;line-height:1;}
+  .plan-precio small{font-size:14px;font-weight:600;color:var(--muted);letter-spacing:0;}
+  .plan-anual{font-size:13px;color:var(--muted);margin-top:6px;}
+  .plan-para{font-size:14px;color:var(--plata);line-height:1.5;margin:14px 0 18px;padding-bottom:18px;border-bottom:1px solid var(--line-2);}
+  .plan ul{margin-bottom:18px;}
+  .plan ul li{position:relative;padding-left:22px;font-size:14px;color:var(--plata);line-height:1.5;margin-bottom:10px;}
+  .plan ul li::before{content:"";position:absolute;left:2px;top:7px;width:7px;height:7px;border-radius:2px;background:var(--cobalto);}
+  .plan-cierre{margin-top:auto;padding-top:16px;border-top:1px solid var(--line-2);font-size:12px;color:var(--muted);line-height:1.5;}
+  .plan-cta{display:block;margin-top:16px;text-align:center;padding:12px;border-radius:100px;font-size:13px;font-weight:600;border:1px solid var(--line);transition:border-color .2s,background .2s;}
+  .plan-cta:hover{border-color:var(--cobalto);background:var(--cobalto-soft);}
+  .plan.destacado .plan-cta{background:var(--cobalto);border-color:var(--cobalto);}
+  .plan.destacado .plan-cta:hover{background:#3a6bff;}
+
+  .nota-lanzamiento{margin-top:20px;padding:16px 20px;border:1px dashed var(--line);border-radius:12px;font-size:13px;color:var(--plata);line-height:1.6;}
+  .nota-lanzamiento b{color:var(--blanco);}
+
+  /* Guía rápida de elección */
+  .elige-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:16px;overflow:hidden;}
+  .elige-item{background:var(--midnight);padding:20px 22px;}
+  .elige-item p{font-size:14px;color:var(--plata);line-height:1.5;margin-bottom:12px;}
+  .elige-item b{font-family:'Sora',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cobalto-txt);}
+
+  /* Tabla comparativa: se desplaza en horizontal cuando no cabe */
+  .tabla-wrap{overflow-x:auto;border:1px solid var(--line-2);border-radius:16px;-webkit-overflow-scrolling:touch;}
+  .tabla-planes{border-collapse:collapse;width:100%;min-width:560px;font-size:14px;}
+  .tabla-planes th,.tabla-planes td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line-2);white-space:nowrap;}
+  .tabla-planes thead th{background:var(--midnight);font-family:'Sora',sans-serif;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);position:sticky;top:0;}
+  .tabla-planes thead th:first-child{color:var(--plata);}
+  .tabla-planes tbody th{font-weight:500;color:var(--plata);white-space:normal;}
+  .tabla-planes td{color:var(--muted);}
+  .tabla-planes td.si{color:var(--blanco);font-weight:600;}
+  .tabla-planes tr:last-child th,.tabla-planes tr:last-child td{border-bottom:none;}
+  .tabla-planes tbody tr:hover td,.tabla-planes tbody tr:hover th{background:rgba(250,250,248,.02);}
+  .tabla-nota{margin-top:16px;font-size:13px;color:var(--muted);line-height:1.6;max-width:760px;}
+  .scroll-hint{display:none;margin-top:10px;font-size:12px;color:var(--muted-2);}
+  @media (max-width:620px){.scroll-hint{display:block;}}
+
+  /* Condiciones */
+  .cond-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:16px;margin-bottom:20px;}
+  .cond-card{background:var(--midnight);border:1px solid var(--line-2);border-radius:16px;padding:24px;}
+  .cond-card h4{font-family:'Sora',sans-serif;font-size:15px;font-weight:600;margin-bottom:14px;}
+  .cond-card ul li{position:relative;padding-left:20px;font-size:14px;color:var(--plata);line-height:1.5;margin-bottom:9px;}
+  .cond-card ul li::before{content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--cobalto);}
+  .cond-card.aparte ul li::before{background:var(--muted-2);}
+  .defs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:16px;}
+  .def{font-size:13px;color:var(--muted);line-height:1.6;}
+  .def b{color:var(--blanco);}
+
+  /* Proceso de 7 pasos */
+  .proceso-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:16px;overflow:hidden;}
+  .proceso-item{background:var(--midnight);padding:20px 22px;}
+  .proceso-item b{font-family:'Sora',sans-serif;font-size:12px;color:var(--cobalto-txt);display:block;margin-bottom:8px;letter-spacing:.06em;}
+  .proceso-item h4{font-size:15px;font-weight:600;margin-bottom:5px;}
+  .proceso-item p{font-size:13px;color:var(--muted);line-height:1.5;}
 
   /* Contacto */
   .contacto-section{padding:clamp(70px,10vw,120px) clamp(18px,5vw,24px);text-align:center;border-top:1px solid var(--line-2);}
@@ -371,6 +452,7 @@
     </div>
     <div class="nav-links">
       <a href="#servicios">Servicios</a>
+      <a href="#planes">Planes</a>
       <a href="#evidencia">Evidencia</a>
       <a href="#piloto">Piloto</a>
       <a href="#faq">Preguntas</a>
@@ -384,6 +466,7 @@
   <div class="nav-panel" id="navPanel" data-open="false">
     <ul>
       <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#planes">Planes</a></li>
       <li><a href="#evidencia">Evidencia</a></li>
       <li><a href="#piloto">Piloto</a></li>
       <li><a href="#faq">Preguntas</a></li>
@@ -412,7 +495,7 @@
         <p>Diseñamos, construimos y protegemos tecnología para organizaciones donde los sistemas son parte directa de la operación.</p>
         <div class="hero-ctas">
           <a href="mailto:andproducciones@gmail.com?subject=Consulta%20desde%20andproducciones.com" class="btn-primary">Conversemos sobre un reto real</a>
-          <a href="#evidencia" class="btn-ghost">Ver lo que construimos</a>
+          <a href="#planes" class="btn-ghost">Ver planes y precios</a>
         </div>
       </div>
     </div>
@@ -483,6 +566,254 @@
         <p>Video, fotografía y dirección creativa de principio a fin.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="section planes-section" id="planes">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-num">02 — Soluciones web para negocios</div>
+      <h2>Una plataforma que crece con tu negocio.</h2>
+      <p>Diseño personalizado y tecnología simple para restaurantes, tiendas, servicios profesionales, consultorios, alojamientos y emprendimientos.</p>
+    </div>
+
+    <div class="tres-pasos reveal">
+      <div class="paso"><b>01</b><h3>Implementamos</h3><p>Diseño y personalización.</p></div>
+      <div class="paso"><b>02</b><h3>Publicamos</h3><p>Configuración y lanzamiento.</p></div>
+      <div class="paso"><b>03</b><h3>Acompañamos</h3><p>Servicio y mantenimiento.</p></div>
+    </div>
+
+    <div class="resumen-precios reveal">
+      <div class="resumen-card">
+        <span class="et">Implementación inicial</span>
+        <span class="cifra">Desde $149</span>
+        <p>Pago único por diseño, personalización, reuniones, ajustes y lanzamiento.</p>
+      </div>
+      <div class="resumen-card">
+        <span class="et">Servicio continuo</span>
+        <span class="cifra">Desde $9.99/mes</span>
+        <p>Hosting, seguridad, mantenimiento y funciones activas según tu plan.</p>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <h3 class="bloque-titulo">Implementación inicial</h3>
+      <p class="bloque-sub">El pago inicial cubre el trabajo de diseño, configuración, revisiones y lanzamiento. Las funciones se adaptan al tipo de negocio y a su operación.</p>
+      <div class="planes-grid">
+
+        <div class="plan">
+          <div class="plan-nombre">Start</div>
+          <div class="plan-precio">$149 <small>pago único</small></div>
+          <p class="plan-para">Para crear una presencia digital profesional.</p>
+          <ul>
+            <li>Diseño responsive personalizado.</li>
+            <li>Inicio, nosotros, productos o servicios, galería, promociones y contacto.</li>
+            <li>WhatsApp, redes sociales, ubicación y formularios básicos.</li>
+            <li>Carga inicial de contenido, SSL y publicación.</li>
+          </ul>
+          <div class="plan-cierre">1 reunión · 1 ronda de correcciones · 1 mes Essential incluido</div>
+          <a class="plan-cta" href="https://wa.me/593984845111?text=Hola%2C%20AND%20Producciones.%20Me%20interesa%20el%20plan%20START.">Consultar Start</a>
+        </div>
+
+        <div class="plan destacado">
+          <div class="plan-badge">Recomendado</div>
+          <div class="plan-nombre">Business</div>
+          <div class="plan-precio">$219 <small>pago único</small></div>
+          <p class="plan-para">Para convertir la web en una herramienta comercial.</p>
+          <ul>
+            <li>Todo lo de Start.</li>
+            <li>Catálogo o portafolio ampliado.</li>
+            <li>Formularios avanzados para solicitudes, cotizaciones, citas o reservas.</li>
+            <li>Gestión de datos básicos del cliente.</li>
+            <li>Funciones comerciales adaptadas al negocio.</li>
+            <li>Dominio personalizado.</li>
+          </ul>
+          <div class="plan-cierre">2 reuniones · 3 rondas de correcciones · 3 meses Plus incluidos</div>
+          <a class="plan-cta" href="https://wa.me/593984845111?text=Hola%2C%20AND%20Producciones.%20Me%20interesa%20el%20plan%20BUSINESS.">Consultar Business</a>
+        </div>
+
+        <div class="plan">
+          <div class="plan-nombre">Premium</div>
+          <div class="plan-precio">$289 <small>pago único</small></div>
+          <p class="plan-para">Para negocios que necesitan gestionar procesos desde la plataforma.</p>
+          <ul>
+            <li>Todo lo de Business.</li>
+            <li>Base de datos de clientes, solicitudes, citas, pedidos o reservas según el negocio.</li>
+            <li>Panel administrativo.</li>
+            <li>Gestión de estados, productos, servicios, precios o promociones.</li>
+            <li>Preparación para pagos online, automatizaciones e integraciones según alcance.</li>
+          </ul>
+          <div class="plan-cierre">3 reuniones + capacitación · 5 rondas · 6 meses Business incluidos</div>
+          <a class="plan-cta" href="https://wa.me/593984845111?text=Hola%2C%20AND%20Producciones.%20Me%20interesa%20el%20plan%20PREMIUM.">Consultar Premium</a>
+        </div>
+
+      </div>
+      <p class="nota-lanzamiento"><b>Precio de lanzamiento.</b> Disponible para los primeros 20 proyectos. Premium incluye 6 meses de Business (valor referencial $119.94).</p>
+    </div>
+
+    <div class="reveal bloque-sep">
+      <h3 class="bloque-titulo">Servicio y mantenimiento</h3>
+      <p class="bloque-sub">Cuando termina el período incluido, eliges el nivel de servicio que deseas mantener. Puedes subir o bajar de acuerdo con el crecimiento de tu negocio.</p>
+      <div class="planes-grid">
+
+        <div class="plan">
+          <div class="plan-nombre">Essential</div>
+          <div class="plan-precio">$9.99 <small>/mes</small></div>
+          <div class="plan-anual">o $99 al año</div>
+          <ul>
+            <li>Hosting + SSL.</li>
+            <li>Subdominio AND Producciones.</li>
+            <li>Sitio informativo activo.</li>
+            <li>Mantenimiento, seguridad y respaldo básico.</li>
+          </ul>
+          <div class="plan-cierre">1 actualización menor al mes</div>
+        </div>
+
+        <div class="plan">
+          <div class="plan-nombre">Plus</div>
+          <div class="plan-precio">$14.99 <small>/mes</small></div>
+          <div class="plan-anual">o $149 al año</div>
+          <ul>
+            <li>Todo lo de Essential.</li>
+            <li>Dominio personalizado.</li>
+            <li>Catálogo o portafolio y formularios avanzados.</li>
+            <li>Solicitudes, cotizaciones, citas o reservas según configuración.</li>
+          </ul>
+          <div class="plan-cierre">2 actualizaciones menores al mes</div>
+        </div>
+
+        <div class="plan destacado">
+          <div class="plan-badge">Más elegido</div>
+          <div class="plan-nombre">Business</div>
+          <div class="plan-precio">$19.99 <small>/mes</small></div>
+          <div class="plan-anual">o $199 al año</div>
+          <ul>
+            <li>Todo lo de Plus.</li>
+            <li>Base de datos y panel administrativo.</li>
+            <li>Gestión de clientes y procesos del negocio.</li>
+            <li>Gestión de productos, servicios, precios, estados y promociones.</li>
+          </ul>
+          <div class="plan-cierre">3 actualizaciones menores al mes</div>
+        </div>
+
+        <div class="plan">
+          <div class="plan-nombre">Pro</div>
+          <div class="plan-precio">$29.99 <small>/mes</small></div>
+          <div class="plan-anual">o $299 al año</div>
+          <ul>
+            <li>Todo lo de Business.</li>
+            <li>Pagos online mediante proveedor compatible.</li>
+            <li>Automatizaciones e integraciones básicas.</li>
+            <li>Reportes, soporte prioritario y asesoría trimestral.</li>
+          </ul>
+          <div class="plan-cierre">5 actualizaciones menores al mes</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="reveal bloque-sep">
+      <h3 class="bloque-titulo">Encuentra tu opción en segundos</h3>
+      <p class="bloque-sub">Si tu negocio necesita…</p>
+      <div class="elige-grid">
+        <div class="elige-item"><p>Presencia profesional y contacto directo.</p><b>Essential</b></div>
+        <div class="elige-item"><p>Captar solicitudes, citas, cotizaciones o reservas.</p><b>Plus</b></div>
+        <div class="elige-item"><p>Administrar clientes y procesos desde un panel.</p><b>Business</b></div>
+        <div class="elige-item"><p>Cobrar online y automatizar procesos.</p><b>Pro</b></div>
+      </div>
+    </div>
+
+    <div class="reveal bloque-sep">
+      <h3 class="bloque-titulo">Detalle de servicios</h3>
+      <p class="bloque-sub">Qué incluye cada nivel de servicio mensual.</p>
+      <div class="tabla-wrap">
+        <table class="tabla-planes">
+          <caption class="sr-only">Comparación de los planes de servicio mensual</caption>
+          <thead>
+            <tr><th scope="col">Característica</th><th scope="col">Essential</th><th scope="col">Plus</th><th scope="col">Business</th><th scope="col">Pro</th></tr>
+          </thead>
+          <tbody>
+          <tr><th scope="row">Mensual</th><td class="">$9.99</td><td class="">$14.99</td><td class="">$19.99</td><td class="">$29.99</td></tr>
+          <tr><th scope="row">Anual</th><td class="">$99</td><td class="">$149</td><td class="">$199</td><td class="">$299</td></tr>
+          <tr><th scope="row">Hosting + SSL</th><td class="si">Sí</td><td class="si">Sí</td><td class="si">Sí</td><td class="si">Sí</td></tr>
+          <tr><th scope="row">Dominio</th><td class="">Subdominio</td><td class="">Propio</td><td class="">Propio</td><td class="">Propio</td></tr>
+          <tr><th scope="row">Catálogo o portafolio</th><td class="">Básico</td><td class="si">Sí</td><td class="si">Sí</td><td class="si">Sí</td></tr>
+          <tr><th scope="row">Formularios avanzados</th><td class="">—</td><td class="si">Sí</td><td class="si">Sí</td><td class="si">Sí</td></tr>
+          <tr><th scope="row">Base de datos</th><td class="">—</td><td class="">—</td><td class="si">Sí</td><td class="si">Sí</td></tr>
+          <tr><th scope="row">Panel administrativo</th><td class="">—</td><td class="">—</td><td class="si">Sí</td><td class="si">Sí</td></tr>
+          <tr><th scope="row">Pago online</th><td class="">—</td><td class="">—</td><td class="">—</td><td class="si">Sí</td></tr>
+          <tr><th scope="row">Actualizaciones al mes</th><td class="">1</td><td class="">2</td><td class="">3</td><td class="">5</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="scroll-hint">Desliza la tabla en horizontal para ver todos los planes.</p>
+      <p class="tabla-nota"><b>Regla simple:</b> la implementación inicial define lo que desarrollamos y personalizamos. El servicio mensual define qué funciones permanecen activas. Cada solución se adapta al tipo de negocio; las funciones nuevas fuera del alcance se cotizan por separado.</p>
+    </div>
+
+    <div class="reveal bloque-sep">
+      <h3 class="bloque-titulo">Condiciones claras</h3>
+      <p class="bloque-sub">Una propuesta simple y transparente.</p>
+      <div class="cond-grid">
+        <div class="cond-card">
+          <h4>Incluido</h4>
+          <ul>
+            <li>Diseño y personalización según el paquete.</li>
+            <li>Reuniones y rondas indicadas.</li>
+            <li>Pruebas responsive y publicación.</li>
+            <li>Configuración técnica dentro del alcance.</li>
+          </ul>
+        </div>
+        <div class="cond-card aparte">
+          <h4>Se cotiza aparte</h4>
+          <ul>
+            <li>Nuevos módulos o funciones.</li>
+            <li>Rediseños fuera del alcance.</li>
+            <li>Integraciones externas específicas.</li>
+            <li>Fotografía, video o copywriting profesional.</li>
+            <li>Comisiones de proveedores externos.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="defs">
+        <p class="def"><b>Ronda de correcciones:</b> agrupa ajustes sobre el diseño acordado, como textos, imágenes, colores o distribución. No incluye nuevas funcionalidades.</p>
+        <p class="def"><b>Actualización menor:</b> cambio pequeño durante el servicio, como precios, promociones, teléfonos, horarios, fotografías, productos, servicios o textos cortos.</p>
+      </div>
+    </div>
+
+    <div class="reveal bloque-sep">
+      <h3 class="bloque-titulo">Servicios adicionales</h3>
+      <p class="bloque-sub">Funciones que se pueden activar sobre cualquier plan.</p>
+      <div class="tabla-wrap">
+        <table class="tabla-planes">
+          <thead><tr><th scope="col">Servicio</th><th scope="col">Referencia</th></tr></thead>
+          <tbody>
+          <tr><th scope="row">WhatsApp Business y automatizaciones</th><td>desde $9.99/mes + proveedor</td></tr>
+          <tr><th scope="row">Reportes avanzados</th><td>desde $4.99/mes</td></tr>
+          <tr><th scope="row">Multidioma</th><td>desde $4.99/mes</td></tr>
+          <tr><th scope="row">Usuarios y roles</th><td>desde $4.99/mes</td></tr>
+          <tr><th scope="row">Facturación electrónica SRI</th><td>desde $14.99/mes</td></tr>
+          <tr><th scope="row">Gestión de contenido</th><td>desde $9.99/mes</td></tr>
+          <tr><th scope="row">Nuevos módulos o integraciones</th><td>cotización independiente</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="tabla-nota"><b>Dominio e infraestructura.</b> Essential utiliza un subdominio de AND Producciones; Plus, Business y Pro permiten dominio personalizado. El hosting, el SSL y la infraestructura estándar están incluidos mientras el servicio esté activo. Si bajas de nivel, las funciones superiores se desactivan, no se eliminan. Las renovaciones de dominio y los costos externos se facturan según corresponda.</p>
+    </div>
+
+    <div class="reveal bloque-sep">
+      <h3 class="bloque-titulo">Cómo trabajamos</h3>
+      <p class="bloque-sub">Un proceso simple de principio a fin.</p>
+      <div class="proceso-grid">
+        <div class="proceso-item"><b>01</b><h4>Conocemos tu negocio</h4><p>Entendemos tus clientes, servicios, productos, procesos y objetivos.</p></div>
+        <div class="proceso-item"><b>02</b><h4>Diseñamos</h4><p>Definimos estructura, contenido y experiencia visual.</p></div>
+        <div class="proceso-item"><b>03</b><h4>Desarrollamos</h4><p>Construimos las funciones de tu implementación.</p></div>
+        <div class="proceso-item"><b>04</b><h4>Revisamos</h4><p>Aplicamos las rondas de correcciones incluidas.</p></div>
+        <div class="proceso-item"><b>05</b><h4>Probamos</h4><p>Verificamos celulares, tablets y computadoras.</p></div>
+        <div class="proceso-item"><b>06</b><h4>Publicamos</h4><p>Configuramos dominio, infraestructura e integraciones.</p></div>
+        <div class="proceso-item"><b>07</b><h4>Te acompañamos</h4><p>Empieza tu período de servicio incluido.</p></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -702,6 +1033,14 @@
     </div>
     <div class="faq-list reveal">
       <details>
+        <summary>¿Qué necesitan de mi negocio para empezar?</summary>
+        <div class="faq-a">Nombre comercial, logotipo e identidad visual si existe; descripción del negocio y su propuesta de valor; productos o servicios principales con precios y promociones; fotografías, contenido y datos de contacto; los procesos que quiera digitalizar (solicitudes, citas, reservas, pedidos o cotizaciones); WhatsApp, correo, redes sociales y ubicación; y los accesos necesarios para dominio, pagos u otros servicios contratados.</div>
+      </details>
+      <details>
+        <summary>¿Qué diferencia hay entre el pago inicial y la mensualidad?</summary>
+        <div class="faq-a">La implementación inicial define lo que desarrollamos y personalizamos: es un pago único. El servicio mensual define qué funciones permanecen activas, más el hosting, la seguridad y el mantenimiento. Cada plan de implementación incluye un período de servicio, y al terminar usted elige con qué nivel continuar.</div>
+      </details>
+      <details>
         <summary>¿Vienen a reemplazar a nuestro equipo interno?</summary>
         <div class="faq-a">No. Entramos como capacidad especializada cuando un problema necesita reunir ingeniería, ciberseguridad y operación crítica. Lo que ya funciona no se toca: se integra.</div>
       </details>
@@ -765,6 +1104,61 @@
     "Seguridad de aplicaciones",
     "Continuidad operacional"
   ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Soluciones web para negocios",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Start",
+        "description": "Implementación web inicial para una presencia digital profesional.",
+        "price": "149",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Business",
+        "description": "Implementación web para convertir el sitio en una herramienta comercial.",
+        "price": "219",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Premium",
+        "description": "Implementación web con base de datos y panel administrativo.",
+        "price": "289",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Essential",
+        "description": "Servicio mensual: hosting, SSL, mantenimiento y respaldo.",
+        "price": "9.99",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Plus",
+        "description": "Servicio mensual con dominio propio, catálogo y formularios avanzados.",
+        "price": "14.99",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Business (servicio)",
+        "description": "Servicio mensual con base de datos y panel administrativo.",
+        "price": "19.99",
+        "priceCurrency": "USD"
+      },
+      {
+        "@type": "Offer",
+        "name": "Pro",
+        "description": "Servicio mensual con pagos online, automatizaciones y reportes.",
+        "price": "29.99",
+        "priceCurrency": "USD"
+      }
+    ]
+  },
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "sales",
