@@ -66,8 +66,10 @@ trap 'rm -rf "$STAGE"' EXIT
 cp -r "$SRC/." "$STAGE/"
 find "$STAGE" -maxdepth 1 -name '*.html' -delete
 cp "$HTML" "$STAGE/index.html"
-# Es una demo de cliente, no contenido del sitio: fuera de los buscadores.
-printf 'User-agent: *\nDisallow: /\n' > "$STAGE/robots.txt"
+# Que no salga en buscadores lo resuelve la cabecera X-Robots-Tag del conf, no
+# un Disallow: bloquear el rastreo dejaría sin vista previa los enlaces que se
+# mandan por WhatsApp, Slack o LinkedIn, que es justo para lo que existe el demo.
+printf 'User-agent: *\nAllow: /\n' > "$STAGE/robots.txt"
 
 TAR="$(mktemp -t demo-XXXXXX).tar.gz"
 tar -czf "$TAR" -C "$STAGE" .
