@@ -239,6 +239,24 @@
   .cliente.confidencial span{color:var(--cobalto-txt);}
 
 
+  /* Franja aparte para lo que todavía no está entregado: mezclarlo con los
+     clientes que ya operan haría que "ya confían en nosotros" dijese algo que
+     no es cierto. */
+  .en-desarrollo{display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:linear-gradient(160deg,rgba(21,87,255,.08),transparent 60%),var(--midnight-2);border:1px solid rgba(21,87,255,.3);border-radius:16px;padding:20px 22px;margin-bottom:clamp(26px,4vw,36px);}
+  .ed-icono{width:46px;height:46px;border-radius:12px;background:var(--cobalto-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .ed-icono svg{width:23px;height:23px;stroke:var(--cobalto-txt);}
+  .ed-texto{flex:1 1 300px;min-width:0;}
+  .ed-texto b{display:block;font-family:'Sora',sans-serif;font-size:15px;font-weight:600;color:var(--cobalto-txt);letter-spacing:.03em;margin-bottom:5px;}
+  .ed-texto p{font-size:13px;color:var(--muted);line-height:1.55;}
+  .ed-estado{flex-shrink:0;font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--plata);border:1px solid var(--line);border-radius:100px;padding:7px 14px;white-space:nowrap;}
+  @media (max-width:620px){
+    .en-desarrollo{gap:14px;padding:18px;}
+    .ed-icono{width:40px;height:40px;border-radius:11px;}
+    .ed-icono svg{width:20px;height:20px;}
+    .ed-estado{order:-1;margin-left:auto;}
+    .ed-texto{flex:1 1 100%;}
+  }
+
   .clientes-cifras{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:16px;overflow:hidden;}
   .clientes-cifras div{background:var(--midnight);padding:20px 18px;text-align:center;}
   .clientes-cifras b{display:block;font-family:'Sora',sans-serif;font-size:clamp(24px,3.4vw,30px);font-weight:700;letter-spacing:-0.02em;margin-bottom:5px;}
@@ -594,14 +612,17 @@
         <span>Cafetería</span>
         <p>Punto de venta y control de inventario.</p>
       </div>
-      <div class="cliente confidencial">
-        <div class="cliente-marca sin-logo">
-          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/></svg>
-        </div>
-        <b>Fuerzas Armadas</b>
-        <span>Sector defensa · Ecuador</span>
-        <p>Operación crítica en web, móvil y escritorio. Se presenta sin identificar la unidad, por confidencialidad.</p>
+    </div>
+
+    <div class="en-desarrollo">
+      <div class="ed-icono">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/></svg>
       </div>
+      <div class="ed-texto">
+        <b>Sector defensa · Ecuador</b>
+        <p>Sistema de operación crítica en web, móvil y escritorio, actualmente en desarrollo. Se presenta sin identificar la unidad, por confidencialidad.</p>
+      </div>
+      <span class="ed-estado">En desarrollo</span>
     </div>
     <div class="clientes-cifras">
       <div><b>4</b><span>marcas operando</span></div>
@@ -653,16 +674,16 @@
   <div class="container">
     <div class="section-head reveal">
       <div class="section-num">02 — Lo que ya construimos</div>
-      <h2>Tecnología operando en entornos reales.</h2>
+      <h2>Tecnología que entra en producción, no en una demo.</h2>
     </div>
     <div class="case-grid reveal">
       <div class="case-card">
-        <div class="case-tag">Bajo confidencialidad</div>
+        <div class="case-tag">En desarrollo · bajo confidencialidad</div>
         <h3>Operaciones críticas</h3>
-        <div class="case-org">Fuerzas Armadas del Ecuador</div>
-        <p>Logística, personal, gestión documental y control de acceso, con web, móvil y escritorio sobre la misma información. Reemplazó al sistema anterior sin apagarlo: quedó ejecutable durante toda la transición.</p>
+        <div class="case-org">Sector defensa · Ecuador</div>
+        <p>Logística, personal, gestión documental y control de acceso, con web, móvil y escritorio sobre la misma información. Está diseñado para sustituir al sistema anterior sin apagarlo: queda ejecutable durante toda la transición.</p>
         <div class="case-chips"><span class="chip">Acceso por rol y alcance</span><span class="chip">Trazabilidad</span></div>
-        <div class="case-note">Sin nombre de unidad, arquitectura ni cifras, por confidencialidad.</div>
+        <div class="case-note">Proyecto en curso. Sin nombre de unidad, arquitectura ni cifras, por confidencialidad.</div>
       </div>
       <div class="case-card">
         <div class="case-tag">Producto propio</div>
@@ -1134,7 +1155,7 @@
       </details>
       <details>
         <summary>¿Cómo manejan la información sensible?</summary>
-        <div class="faq-a">Con acuerdo de confidencialidad, acceso mínimo y trazabilidad. Nuestro trabajo con las Fuerzas Armadas se presenta sin nombre de unidad ni datos operacionales, y así seguirá.</div>
+        <div class="faq-a">Con acuerdo de confidencialidad, acceso mínimo y trazabilidad. Nuestro trabajo en el sector defensa se presenta sin nombre de unidad ni datos operacionales, y así seguirá.</div>
       </details>
     </div>
   </div>
