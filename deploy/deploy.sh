@@ -55,12 +55,15 @@ echo "    \$(sudo find "$WEBROOT" -type f | wc -l) archivos en $WEBROOT"
 REMOTE
 
 # --- nginx + TLS -------------------------------------------------------------
-if $SETUP; then
-  say "Instalando el conf de nginx"
-  sed "s|__CSP_SCRIPT_HASHES__|$HASHES|g" "$REPO/deploy/$CONF" > /tmp/$CONF
-  scp -q /tmp/$CONF "$SSH_HOST:/tmp/$CONF"
-  rm -f /tmp/$CONF
+# El conf se instala SIEMPRE, no solo con --setup: lleva dentro los hashes CSP
+# del JavaScript, y si se queda atrás el navegador bloquea los scripts de la
+# página sin avisar. --setup solo añade la emisión del certificado.
+say "Sincronizando el conf de nginx (incluye los hashes CSP)"
+sed "s|__CSP_SCRIPT_HASHES__|$HASHES|g" "$REPO/deploy/$CONF" > /tmp/$CONF
+scp -q /tmp/$CONF "$SSH_HOST:/tmp/$CONF"
+rm -f /tmp/$CONF
 
+if $SETUP; then
   ssh "$SSH_HOST" bash -s <<REMOTE
 set -euo pipefail
 CERT=/etc/letsencrypt/live/$DOMAIN/fullchain.pem
@@ -101,8 +104,15 @@ sudo systemctl reload nginx
 echo "    nginx recargado"
 REMOTE
 else
-  say "Recargando nginx"
-  ssh "$SSH_HOST" 'sudo nginx -t && sudo systemctl reload nginx'
+  ssh "$SSH_HOST" bash -s <<REMOTE
+set -euo pipefail
+sudo cp /tmp/$CONF /etc/nginx/sites-available/$CONF
+rm -f /tmp/$CONF
+sudo ln -sfn /etc/nginx/sites-available/$CONF /etc/nginx/sites-enabled/$CONF
+sudo nginx -t
+sudo systemctl reload nginx
+echo "    nginx recargado con el CSP al día"
+REMOTE
 fi
 
 say "Listo — https://$DOMAIN"

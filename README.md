@@ -33,16 +33,17 @@ Sube los archivos y recarga nginx. Para cambios de contenido, es todo lo que hac
 ./deploy/deploy.sh --setup
 ```
 
-Hace además lo de arriba, reinstala el conf de nginx y se asegura de que exista el
-certificado. Es necesario solo si se toca `deploy/andproducciones.conf`. Es idempotente:
-si el certificado ya existe no lo vuelve a pedir.
+Hace lo de arriba y además se asegura de que exista el certificado. Solo hace falta
+la primera vez o si se cambia de dominio. Es idempotente: si el certificado ya existe
+no lo vuelve a pedir, así que no gasta el límite de emisiones de Let's Encrypt.
 
 ## Detalles que conviene conocer antes de tocar nada
 
 **El CSP va por hash.** `script-src` no permite `'unsafe-inline'`: declara el sha256
-de cada `<script>` inline. `deploy.sh` los recalcula en cada despliegue, así que editar
-el JS de la página es seguro **mientras se despliegue con el script**. Editar el HTML
-a mano en el servidor deja la página sin JavaScript.
+de cada `<script>` inline. `deploy.sh` los recalcula y reinstala el conf de nginx en
+**cada** despliegue, así que editar el JS de la página es seguro mientras se despliegue
+con el script. Editar el HTML a mano en el servidor deja la página sin JavaScript: el
+navegador bloquea los scripts en silencio y se pierden el efecto del hero y el menú.
 
 **Las fuentes son locales.** No hay peticiones a Google Fonts. Si se añade un peso nuevo
 hay que descargar su woff2 a `fonts/` y declararlo en `fonts/fonts.css`.
