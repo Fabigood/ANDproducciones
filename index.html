@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>AND Producciones — Software, ciberseguridad y operación crítica</title>
-<meta name="description" content="Soluciones web para negocios desde $149, y software, ciberseguridad y operación crítica para organizaciones donde los sistemas son parte directa de la operación.">
+<meta name="description" content="Pruebe 7 días gratis. Soluciones web para negocios desde $149, y software y ciberseguridad para organizaciones donde los sistemas son parte de la operación.">
 <link rel="canonical" href="https://andproducciones.com/">
 <meta name="theme-color" content="#0B1220">
 <meta name="author" content="AND Producciones">
@@ -21,14 +21,14 @@
 <meta property="og:site_name" content="AND Producciones">
 <meta property="og:locale" content="es_EC">
 <meta property="og:title" content="AND Producciones — Software, ciberseguridad y operación crítica">
-<meta property="og:description" content="Soluciones web para negocios desde $149. Y software, ciberseguridad y operación crítica para organizaciones donde los sistemas son parte de la operación.">
+<meta property="og:description" content="Pruebe 7 días gratis. Soluciones web para negocios desde $149, con hosting, seguridad y mantenimiento incluidos.">
 <meta property="og:image" content="https://andproducciones.com/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="AND Producciones — Protegemos hoy. Conectamos el futuro.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AND Producciones — Software, ciberseguridad y operación crítica">
-<meta name="twitter:description" content="Soluciones web para negocios desde $149. Y software, ciberseguridad y operación crítica para organizaciones donde los sistemas son parte de la operación.">
+<meta name="twitter:description" content="Pruebe 7 días gratis. Soluciones web para negocios desde $149, con hosting, seguridad y mantenimiento incluidos.">
 <meta name="twitter:image" content="https://andproducciones.com/assets/og-image.jpg">
 <!-- Tipografía servida desde nuestro propio dominio: sin peticiones a terceros. -->
 <link rel="preload" href="/fonts/manrope-400-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -481,6 +481,29 @@
   .piloto-ic{width:34px;height:34px;border-radius:9px;background:var(--cobalto-soft);display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
   .piloto-ic svg{width:17px;height:17px;stroke:var(--cobalto-txt);}
 
+  /* Prueba gratuita: es el gancho comercial, así que se distingue del resto
+     sin romper la paleta. */
+  .hero-prueba{display:inline-flex;align-items:center;gap:9px;margin-top:14px;padding:9px 14px;border:1px solid rgba(21,87,255,.42);background:rgba(21,87,255,.1);border-radius:100px;}
+  .hero-prueba svg{width:16px;height:16px;stroke:var(--cobalto-txt);flex-shrink:0;}
+  .hero-prueba span{font-size:13.5px;color:var(--plata);line-height:1.35;}
+  .hero-prueba b{color:var(--blanco);font-weight:700;}
+
+  .prueba-franja{display:flex;align-items:center;gap:clamp(14px,2vw,20px);flex-wrap:wrap;background:linear-gradient(150deg,rgba(21,87,255,.14),transparent 65%),var(--midnight);border:1px solid rgba(21,87,255,.42);border-radius:18px;padding:clamp(18px,2.6vw,24px);margin-bottom:14px;scroll-margin-top:84px;}
+  .prueba-ic{width:48px;height:48px;border-radius:13px;background:var(--cobalto-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .prueba-ic svg{width:24px;height:24px;stroke:var(--cobalto-txt);}
+  .prueba-txt{flex:1 1 320px;min-width:0;}
+  .prueba-txt b{display:block;font-family:'Sora',sans-serif;font-size:clamp(17px,2.2vw,20px);font-weight:700;letter-spacing:-0.01em;margin-bottom:5px;}
+  .prueba-txt p{font-size:14px;color:var(--muted);line-height:1.5;}
+  .prueba-cta{flex-shrink:0;background:var(--cobalto);color:var(--blanco);padding:13px 22px;border-radius:100px;font-size:14px;font-weight:600;white-space:nowrap;transition:background .2s,transform .2s;}
+  .prueba-cta:hover{background:#3a6bff;transform:translateY(-2px);}
+  @media (max-width:560px){
+    .prueba-cta{width:100%;text-align:center;}
+    .hero-prueba{width:100%;}
+  }
+
+  .enlace-suave{color:var(--cobalto-txt);text-decoration:underline;text-underline-offset:3px;}
+  .enlace-suave:hover{color:var(--blanco);}
+
   /* Contacto */
   .contacto-section{padding:clamp(46px,6.5vw,80px) clamp(18px,5vw,24px);text-align:center;border-top:1px solid var(--line-2);}
   .contacto-section h2{font-size:clamp(27px,3.8vw,42px);font-weight:600;letter-spacing:-0.02em;margin-bottom:14px;max-width:860px;margin-left:auto;margin-right:auto;}
@@ -520,7 +543,7 @@
       <a href="#faq">Preguntas</a>
       <a href="#contacto">Contacto</a>
     </div>
-    <a href="#contacto" class="nav-cta">Evaluar un piloto</a>
+    <a href="#prueba" class="nav-cta">7 días gratis</a>
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navPanel" aria-label="Abrir menú de navegación">
       <span></span>
     </button>
@@ -533,7 +556,7 @@
       <li><a href="#capacidad">Capacidad</a></li>
       <li><a href="#faq">Preguntas</a></li>
       <li><a href="#contacto">Contacto</a></li>
-      <li><a href="#contacto" class="panel-cta">Evaluar un piloto</a></li>
+      <li><a href="#prueba" class="panel-cta">Probar 7 días gratis</a></li>
     </ul>
   </div>
 </header>
@@ -555,8 +578,9 @@
       </div>
       <div class="hero-sub">
         <p>Webs y sistemas que su negocio usa todos los días. Implementación desde <b>$149</b> y servicio desde <b>$9.99 al mes</b>.</p>
+          <div class="hero-prueba"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 1.8"/></svg><span><b>7 días gratis.</b> Pruebe el plan estándar antes de pagar nada.</span></div>
         <div class="hero-ctas">
-          <a href="#planes" class="btn-primary">Ver planes desde $149</a>
+          <a href="#prueba" class="btn-primary">Probar 7 días gratis</a>
           <a href="https://wa.me/593984845111?text=Hola%2C%20AND%20Producciones.%20Quiero%20una%20web%20para%20mi%20negocio." class="btn-ghost" target="_blank" rel="noopener">Escribir por WhatsApp</a>
         </div>
       </div>
@@ -716,6 +740,17 @@
       <p>Diseño personalizado y tecnología simple para restaurantes, tiendas, servicios profesionales, consultorios, alojamientos y emprendimientos.</p>
     </div>
 
+    <div class="prueba-franja reveal" id="prueba">
+      <div class="prueba-ic">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 1.8"/></svg>
+      </div>
+      <div class="prueba-txt">
+        <b>Pruebe 7 días gratis</b>
+        <p>Le dejamos funcionando el plan estándar y lo usa en su negocio una semana entera. Si le sirve, seguimos con el plan que elija. Si no, no paga nada y ahí queda.</p>
+      </div>
+      <a class="prueba-cta" href="https://wa.me/593984845111?text=Hola%2C%20AND%20Producciones.%20Quiero%20probar%207%20d%C3%ADas%20gratis." target="_blank" rel="noopener">Empezar la prueba</a>
+    </div>
+
     <div class="tres-pasos reveal">
       <div class="paso"><div class="paso-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4l10-10a2.5 2.5 0 0 0-3.5-3.5L4.5 16.5z"/></svg></div><b>01</b><h3>Implementamos</h3><p>Diseño y personalización.</p></div>
       <div class="paso"><div class="paso-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3.5 2 5.5 5.5 5.5 9.5L14 16h-4l-3.5-3.5C6.5 8.5 8.5 5 12 3z"/><circle cx="12" cy="10" r="1.6"/><path d="M9 17.5c-1.5 1-2 3-2 3s2-.5 3-2"/></svg></div><b>02</b><h3>Publicamos</h3><p>Configuración y lanzamiento.</p></div>
@@ -723,6 +758,11 @@
     </div>
 
     <div class="resumen-precios reveal">
+      <div class="resumen-card">
+        <span class="et">Prueba</span>
+        <span class="cifra">7 días gratis</span>
+        <p>El plan estándar funcionando en su negocio, sin pagar nada por adelantado.</p>
+      </div>
       <div class="resumen-card">
         <span class="et">Implementación inicial</span>
         <span class="cifra">Desde $149</span>
@@ -1079,6 +1119,10 @@
     </div>
     <div class="faq-list reveal">
       <details>
+        <summary>¿Cómo funcionan los 7 días gratis?</summary>
+        <div class="faq-a">Le dejamos funcionando el plan estándar con su nombre, sus productos o servicios y sus datos de contacto, y lo usa en su negocio una semana completa. No se paga nada por adelantado ni hace falta tarjeta. Al terminar, si quiere continuar elegimos juntos el plan de implementación y el nivel de servicio; si no, no hay ningún compromiso.</div>
+      </details>
+      <details>
         <summary>¿Qué necesitan de mi negocio para empezar?</summary>
         <div class="faq-a">Nombre comercial, logotipo e identidad visual si existe; descripción del negocio y su propuesta de valor; productos o servicios principales con precios y promociones; fotografías, contenido y datos de contacto; los procesos que quiera digitalizar (solicitudes, citas, reservas, pedidos o cotizaciones); WhatsApp, correo, redes sociales y ubicación; y los accesos necesarios para dominio, pagos u otros servicios contratados.</div>
       </details>
@@ -1108,7 +1152,7 @@
 
 <section class="contacto-section reveal" id="contacto">
   <h2>¿Tienen un problema real donde la tecnología, la seguridad y la operación se cruzan?</h2>
-  <p class="lead">Cuéntennos cuál es. Si podemos ayudar, lo decimos; y si no, también.</p>
+  <p class="lead">Cuéntennos cuál es. Y si prefiere verlo antes de hablar de dinero, empiece por los <a href="#prueba" class="enlace-suave">7 días gratis</a>.</p>
 
   <div class="contacto-cards">
     <a class="contacto-card" href="mailto:andproducciones@gmail.com?subject=Consulta%20desde%20andproducciones.com">
@@ -1154,6 +1198,18 @@
     "@type": "OfferCatalog",
     "name": "Soluciones web para negocios",
     "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Prueba de 7 días",
+        "description": "Plan estándar funcionando en el negocio durante 7 días, sin costo ni compromiso.",
+        "price": "0",
+        "priceCurrency": "USD",
+        "eligibleDuration": {
+          "@type": "QuantitativeValue",
+          "value": 7,
+          "unitCode": "DAY"
+        }
+      },
       {
         "@type": "Offer",
         "name": "Start",
