@@ -213,7 +213,6 @@
   .marquee-track span::after{content:"·";margin-left:28px;color:var(--line);}
   @keyframes scroll-x{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
 
-  .clients-section{padding:clamp(44px,7vw,60px) clamp(18px,5vw,24px);text-align:center;}
 
   /* Prueba social: lo primero que tiene que convencer, así que va arriba y se
      lee de un vistazo, sin párrafos. */
@@ -262,9 +261,6 @@
   .clientes-cifras b{display:block;font-family:'Sora',sans-serif;font-size:clamp(24px,3.4vw,30px);font-weight:700;letter-spacing:-0.02em;margin-bottom:5px;}
   .clientes-cifras span{font-size:12px;color:var(--muted);line-height:1.4;display:block;}
   .clients-label{font-size:13px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;font-weight:600;margin-bottom:28px;}
-  .clients-row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;}
-  .client-pill{border:1px solid var(--line);border-radius:100px;padding:10px 20px;font-family:'Sora',sans-serif;font-size:14px;font-weight:600;color:var(--plata);}
-  .client-pill.muted{color:var(--muted-2);font-weight:500;border-radius:14px;max-width:100%;}
 
   /* ---------- SECTION GENERIC ---------- */
   .section{padding:clamp(40px,5.6vw,72px) clamp(18px,5vw,24px);}
@@ -296,10 +292,6 @@
   @media (max-width:420px){.services-grid{grid-template-columns:1fr;}}
 
   /* Retos grid */
-  .retos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:20px;overflow:hidden;}
-  .reto-card{background:var(--midnight);padding:clamp(22px,3.6vw,32px);}
-  .reto-card h3{font-size:18px;font-weight:600;margin-bottom:8px;letter-spacing:-0.01em;}
-  .reto-card p{font-size:14px;color:var(--muted);line-height:1.5;}
 
 
   /* ---------- QUOTE SCRUB ---------- */
@@ -314,29 +306,11 @@
   #quoteText .word.accent-word{color:var(--cobalto) !important;}
 
   /* Dos mitades */
-  .mitades-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:20px;overflow:hidden;margin-bottom:1px;}
-  .mitad-card{background:var(--midnight-2);padding:clamp(24px,4vw,40px);}
-  .mitad-tag{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--cobalto-txt);margin-bottom:14px;}
-  .mitad-card h3{font-size:22px;font-weight:600;margin-bottom:20px;letter-spacing:-0.01em;}
-  .mitad-card ul li{position:relative;padding-left:20px;font-size:15px;color:var(--plata);line-height:1.5;margin-bottom:12px;}
-  .mitad-card ul li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--cobalto);}
-  .mitad-footer{background:var(--midnight);border:1px solid var(--line-2);border-top:none;border-radius:0 0 20px 20px;padding:24px clamp(24px,4vw,40px);font-size:14px;color:var(--muted);}
-  .mitad-footer b{color:var(--blanco);}
   @media (max-width:760px){.mitades-grid{grid-template-columns:1fr;}}
 
   /* Marcos de referencia */
-  .marcos-section{padding:clamp(24px,3vw,36px) clamp(18px,5vw,24px);text-align:center;border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2);}
-  .marcos-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:16px;}
-  .marco-badge{border:1px solid var(--line);border-radius:10px;padding:10px 18px;font-family:'Sora',sans-serif;font-size:13px;font-weight:600;color:var(--plata);}
-  .marcos-section p{max-width:680px;margin:0 auto;font-size:13px;color:var(--muted);line-height:1.5;}
-  .marcos-section p b{color:var(--blanco);}
 
   /* Arquitectura */
-  .arch-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,60px);align-items:start;}
-  .arch-blocks{display:flex;flex-direction:column;gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:16px;overflow:hidden;}
-  .arch-block{background:var(--midnight-2);padding:18px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px;}
-  .arch-block b{font-family:'Sora',sans-serif;font-size:15px;font-weight:600;}
-  .arch-block span{font-size:13px;color:var(--muted);text-align:right;}
   @media (max-width:900px){.arch-layout{grid-template-columns:1fr;}}
 
   /* Casos */
@@ -354,32 +328,12 @@
 
 
   /* Capacidades */
-  .cap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(288px,100%),1fr));gap:16px;margin-bottom:26px;}
-  .cap-card{background:var(--midnight-2);border:1px solid var(--line-2);border-radius:16px;padding:clamp(20px,3vw,24px);}
-  .cap-card h3{font-size:16px;font-weight:600;margin-bottom:8px;letter-spacing:-0.01em;}
-  .cap-card p{font-size:13px;color:var(--muted);line-height:1.5;}
-  .stack-lists{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:20px;padding-top:22px;border-top:1px solid var(--line-2);}
-  .stack-list b{display:block;font-family:'Sora',sans-serif;font-size:13px;font-weight:600;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;margin-bottom:12px;}
-  .stack-list .tag-row{display:flex;flex-wrap:wrap;gap:8px;}
-  .stack-list .tag-row span{font-size:12px;padding:5px 10px;border-radius:6px;background:var(--line-2);color:var(--plata);}
-  .stack-note{margin-top:20px;font-size:13px;color:var(--muted-2);line-height:1.55;max-width:860px;}
 
 
   /* Disciplinas */
-  .disc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(270px,100%),1fr));gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:20px;overflow:hidden;margin-bottom:20px;}
-  .disc-card{background:var(--midnight-2);padding:clamp(22px,3.6vw,32px);}
-  .disc-card h3{font-size:18px;font-weight:600;margin-bottom:16px;}
-  .disc-card ul li{font-size:14px;color:var(--plata);line-height:1.7;position:relative;padding-left:16px;}
-  .disc-card ul li::before{content:"—";position:absolute;left:0;color:var(--muted-2);}
-  .disc-note{font-size:14px;color:var(--muted);line-height:1.55;max-width:900px;}
 
 
   /* Continuidad */
-  .cont-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,60px);align-items:center;}
-  .cont-list li{font-size:16px;color:var(--plata);padding:9px 0;border-bottom:1px solid var(--line-2);}
-  .cont-list li:first-child{padding-top:0;}
-  .cont-final{font-family:'Sora',sans-serif;font-size:22px;font-weight:600;padding-top:18px;}
-  .cont-right p{font-size:16px;color:var(--muted);line-height:1.6;}
   @media (max-width:900px){.cont-layout{grid-template-columns:1fr;gap:32px;}}
 
   /* Piloto */
@@ -496,6 +450,37 @@
   .proceso-item h4{font-size:15px;font-weight:600;margin-bottom:5px;}
   .proceso-item p{font-size:13px;color:var(--muted);line-height:1.5;}
 
+  /* ---------- CAPACIDAD TÉCNICA (fusión del bloque institucional) ---------- */
+  .cap2-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(238px,100%),1fr));gap:14px;margin-bottom:clamp(20px,3vw,30px);}
+  .cap2{background:var(--midnight-2);border:1px solid var(--line-2);border-radius:16px;padding:clamp(18px,2.6vw,22px);transition:border-color .25s,transform .25s;}
+  .cap2:hover{border-color:var(--cobalto);transform:translateY(-3px);}
+  .cap2-ic{width:38px;height:38px;border-radius:10px;background:var(--cobalto-soft);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+  .cap2-ic svg{width:19px;height:19px;stroke:var(--cobalto-txt);}
+  .cap2 h3{font-size:15px;font-weight:600;margin-bottom:6px;letter-spacing:-0.01em;}
+  .cap2 p{font-size:13px;color:var(--muted);line-height:1.5;}
+
+  .marcos2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:clamp(16px,3vw,32px);align-items:center;background:var(--midnight-2);border:1px solid var(--line-2);border-radius:16px;padding:clamp(18px,2.6vw,24px);margin-bottom:clamp(18px,2.6vw,26px);}
+  .marcos2-cab b{display:block;font-family:'Sora',sans-serif;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--cobalto-txt);margin-bottom:6px;}
+  .marcos2-cab span{font-size:13px;color:var(--muted);line-height:1.5;}
+  .marcos2-row{display:flex;flex-wrap:wrap;gap:8px;}
+  .marco2{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);border-radius:100px;padding:7px 13px;font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:var(--plata);}
+  .marco2 svg{width:14px;height:14px;stroke:var(--cobalto-txt);flex-shrink:0;}
+
+  .stack2-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(268px,100%),1fr));gap:12px;margin-bottom:16px;}
+  .stack2{display:flex;align-items:flex-start;gap:12px;background:var(--midnight-2);border:1px solid var(--line-2);border-radius:14px;padding:16px 18px;}
+  .stack2-ic{width:34px;height:34px;border-radius:9px;background:var(--line-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .stack2-ic svg{width:17px;height:17px;stroke:var(--plata);}
+  .stack2 b{display:block;font-family:'Sora',sans-serif;font-size:13px;font-weight:600;margin-bottom:4px;}
+  .stack2 span{font-size:12px;color:var(--muted);line-height:1.55;}
+  .cap2-nota{font-size:13px;color:var(--muted-2);line-height:1.55;max-width:900px;}
+
+  .case-ic{width:38px;height:38px;border-radius:10px;background:var(--cobalto-soft);display:flex;align-items:center;justify-content:center;}
+  .case-ic svg{width:19px;height:19px;stroke:var(--cobalto-txt);}
+  .paso-ic{width:34px;height:34px;border-radius:9px;background:var(--cobalto-soft);display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+  .paso-ic svg{width:17px;height:17px;stroke:var(--cobalto-txt);}
+  .piloto-ic{width:34px;height:34px;border-radius:9px;background:var(--cobalto-soft);display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+  .piloto-ic svg{width:17px;height:17px;stroke:var(--cobalto-txt);}
+
   /* Contacto */
   .contacto-section{padding:clamp(46px,6.5vw,80px) clamp(18px,5vw,24px);text-align:center;border-top:1px solid var(--line-2);}
   .contacto-section h2{font-size:clamp(27px,3.8vw,42px);font-weight:600;letter-spacing:-0.02em;margin-bottom:14px;max-width:860px;margin-left:auto;margin-right:auto;}
@@ -531,7 +516,7 @@
       <a href="#servicios">Servicios</a>
       <a href="#planes">Planes</a>
       <a href="#evidencia">Evidencia</a>
-      <a href="#piloto">Piloto</a>
+      <a href="#capacidad">Capacidad</a>
       <a href="#faq">Preguntas</a>
       <a href="#contacto">Contacto</a>
     </div>
@@ -545,7 +530,7 @@
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#planes">Planes</a></li>
       <li><a href="#evidencia">Evidencia</a></li>
-      <li><a href="#piloto">Piloto</a></li>
+      <li><a href="#capacidad">Capacidad</a></li>
       <li><a href="#faq">Preguntas</a></li>
       <li><a href="#contacto">Contacto</a></li>
       <li><a href="#contacto" class="panel-cta">Evaluar un piloto</a></li>
@@ -693,6 +678,7 @@
     </div>
     <div class="case-grid reveal">
       <div class="case-card">
+        <div class="case-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/></svg></div>
         <div class="case-tag">En desarrollo · bajo confidencialidad</div>
         <h3>Operaciones críticas</h3>
         <div class="case-org">Sector defensa · Ecuador</div>
@@ -701,6 +687,7 @@
         <div class="case-note">Proyecto en curso. Sin nombre de unidad, arquitectura ni cifras, por confidencialidad.</div>
       </div>
       <div class="case-card">
+        <div class="case-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5V7a1.5 1.5 0 0 1 1.5-1.5h13A1.5 1.5 0 0 1 20 7v2.5a2.5 2.5 0 0 0 0 5V17a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 17v-2.5a2.5 2.5 0 0 0 0-5z"/><path d="M14 8v8"/></svg></div>
         <div class="case-tag">Producto propio</div>
         <h3>Plataforma transaccional</h3>
         <div class="case-org">VibeGo</div>
@@ -709,6 +696,7 @@
         <div class="case-stack">Angular SSR · Node · Prisma · PostgreSQL · Capacitor</div>
       </div>
       <div class="case-card">
+        <div class="case-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M5 20V6.5L12 4l7 2.5V20"/><path d="M10 20v-4h4v4"/></svg></div>
         <div class="case-tag">Hotelería y restauración</div>
         <h3>Grupo multimarca</h3>
         <div class="case-org">Cañalimeña</div>
@@ -729,9 +717,9 @@
     </div>
 
     <div class="tres-pasos reveal">
-      <div class="paso"><b>01</b><h3>Implementamos</h3><p>Diseño y personalización.</p></div>
-      <div class="paso"><b>02</b><h3>Publicamos</h3><p>Configuración y lanzamiento.</p></div>
-      <div class="paso"><b>03</b><h3>Acompañamos</h3><p>Servicio y mantenimiento.</p></div>
+      <div class="paso"><div class="paso-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4l10-10a2.5 2.5 0 0 0-3.5-3.5L4.5 16.5z"/></svg></div><b>01</b><h3>Implementamos</h3><p>Diseño y personalización.</p></div>
+      <div class="paso"><div class="paso-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3.5 2 5.5 5.5 5.5 9.5L14 16h-4l-3.5-3.5C6.5 8.5 8.5 5 12 3z"/><circle cx="12" cy="10" r="1.6"/><path d="M9 17.5c-1.5 1-2 3-2 3s2-.5 3-2"/></svg></div><b>02</b><h3>Publicamos</h3><p>Configuración y lanzamiento.</p></div>
+      <div class="paso"><div class="paso-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13a7 7 0 0 1 14 0"/><rect x="3" y="13" width="3.6" height="6" rx="1.6"/><rect x="17.4" y="13" width="3.6" height="6" rx="1.6"/><path d="M19 19v.6a2.4 2.4 0 0 1-2.4 2.4H13"/></svg></div><b>03</b><h3>Acompañamos</h3><p>Servicio y mantenimiento.</p></div>
     </div>
 
     <div class="resumen-precios reveal">
@@ -983,31 +971,14 @@
       <div class="step-pill"><b>06</b>Operar</div>
     </div>
     <div class="piloto-grid reveal">
-      <div class="piloto-card"><h3>Problema</h3><p>Uno específico, elegido por ustedes.</p></div>
-      <div class="piloto-card"><h3>Alcance</h3><p>Cerrado por escrito antes de empezar.</p></div>
-      <div class="piloto-card"><h3>Responsables</h3><p>Un interlocutor por lado.</p></div>
-      <div class="piloto-card"><h3>Línea base e indicadores</h3><p>Cómo está hoy y con qué se compara.</p></div>
-      <div class="piloto-card"><h3>Entregable</h3><p>Funcionando, con código y documentación.</p></div>
-      <div class="piloto-card"><h3>Seguridad</h3><p>Revisión incluida, con informe de hallazgos.</p></div>
+      <div class="piloto-card"><div class="piloto-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r=".6" fill="currentColor"/></svg></div><h3>Problema</h3><p>Uno específico, elegido por ustedes.</p></div>
+      <div class="piloto-card"><div class="piloto-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 7h11M8.5 12h11M8.5 17h11"/><path d="M4.5 7h.01M4.5 12h.01M4.5 17h.01"/></svg></div><h3>Alcance</h3><p>Cerrado por escrito antes de empezar.</p></div>
+      <div class="piloto-card"><div class="piloto-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M2.5 20c0-3.3 2.9-6 6.5-6s6.5 2.7 6.5 6"/><circle cx="17.5" cy="9" r="2.3"/><path d="M21.5 20c0-2.5-2-4.6-4.7-5.2"/></svg></div><h3>Responsables</h3><p>Un interlocutor por lado.</p></div>
+      <div class="piloto-card"><div class="piloto-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V5M16 20v-7M22 20H2"/></svg></div><h3>Línea base e indicadores</h3><p>Cómo está hoy y con qué se compara.</p></div>
+      <div class="piloto-card"><div class="piloto-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 7.5v9l-8.5 4.5-8.5-4.5v-9L12 3z"/><path d="M3.7 7.6L12 12l8.3-4.4M12 12v9"/></svg></div><h3>Entregable</h3><p>Funcionando, con código y documentación.</p></div>
+      <div class="piloto-card"><div class="piloto-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/><path d="M9.2 11.8l2 2 3.6-3.6"/></svg></div><h3>Seguridad</h3><p>Revisión incluida, con informe de hallazgos.</p></div>
     </div>
     <p class="piloto-note reveal"><b>La inversión inicial del piloto corre por cuenta de AND Producciones.</b> La confianza técnica se demuestra trabajando: preferimos enseñar nuestra forma de trabajar antes de pedir una relación de largo plazo.</p>
-  </div>
-</section>
-
-<section class="section compacta" id="retos">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="section-num">Retos de escala</div>
-      <h2>Cuando una operación crece, también crece su complejidad.</h2>
-    </div>
-    <div class="retos-grid reveal">
-      <div class="reto-card"><h3>Sistemas que integrar</h3><p>Plataformas de distintas generaciones que deben entenderse.</p></div>
-      <div class="reto-card"><h3>Identidades y accesos</h3><p>Muchas personas, muchos roles, y quién debe ver qué.</p></div>
-      <div class="reto-card"><h3>Marcas y unidades</h3><p>Estructuras societarias que el software debe respetar.</p></div>
-      <div class="reto-card"><h3>Datos distribuidos</h3><p>La misma información en sitios y versiones distintas.</p></div>
-      <div class="reto-card"><h3>Dependencias externas</h3><p>Terceros de los que cuelga un proceso que no puede parar.</p></div>
-      <div class="reto-card"><h3>Continuidad</h3><p>Qué pasa cuando algo se cae, y cómo se reconstruye después.</p></div>
-    </div>
   </div>
 </section>
 
@@ -1017,128 +988,87 @@
   </div>
 </section>
 
-<section class="section compacta">
+<section class="section compacta" id="capacidad">
   <div class="container">
     <div class="section-head reveal">
-      <div class="section-num">Proteger lo que importa. Potenciar lo que construye el futuro.</div>
-      <h2>Dos mitades, una razón.</h2>
+      <div class="section-num">05 — Capacidad técnica</div>
+      <h2>Lo que hay detrás de cada entrega.</h2>
+      <p>No todo se resuelve con una aplicación web. Estas son las capacidades que sostienen los sistemas que ya operan.</p>
     </div>
-    <div class="mitades-grid reveal">
-      <div class="mitad-card">
-        <div class="mitad-tag">Protegemos</div>
-        <h3>Seguridad de lo que ya existe</h3>
-        <ul>
-          <li>Arquitectura segura, identidad y gestión de accesos.</li>
-          <li>Aplicaciones, APIs e infraestructura.</li>
-          <li>Hardening, modelado de amenazas y análisis de riesgo.</li>
-          <li>Continuidad y seguridad operacional.</li>
-        </ul>
-      </div>
-      <div class="mitad-card">
-        <div class="mitad-tag">Potenciamos</div>
-        <h3>Capacidades nuevas sobre lo que funciona</h3>
-        <ul>
-          <li>Software a medida, automatización e integraciones.</li>
-          <li>Aplicaciones web, móviles y de escritorio.</li>
-          <li>Datos, procesos y experiencias digitales.</li>
-          <li>Despliegue, observabilidad y evolución.</li>
-        </ul>
-      </div>
-    </div>
-    <div class="mitad-footer reveal"><b>Operación.</b> Las dos existen por lo mismo: que la organización pueda seguir operando.</div>
-  </div>
-</section>
 
-<section class="marcos-section compacta reveal">
-  <div class="clients-label">Marcos de referencia</div>
-  <div class="marcos-row">
-    <div class="marco-badge">ISO/IEC 27001</div>
-    <div class="marco-badge">OWASP ASVS</div>
-    <div class="marco-badge">OWASP Top 10</div>
-    <div class="marco-badge">NIST CSF</div>
-    <div class="marco-badge">CIS Benchmarks</div>
-  </div>
-  <p>Trabajamos alineados con estos controles — accesos por rol, bitácora, cifrado, gestión de secretos y respaldos. <b>Certificación ISO/IEC 27001 en proceso.</b></p>
-</section>
-
-<section class="section compacta">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="section-num">Pensamiento arquitectónico</div>
-      <h2>Una plataforma. Múltiples marcas. Una arquitectura común.</h2>
-    </div>
-    <div class="arch-layout reveal">
-      <div>
-        <p style="font-size:16px;color:var(--muted);line-height:1.6;margin-bottom:16px;">Un hotel, una cafetería y un restaurante sobre la misma base. No comparten «un sistema»: comparten una arquitectura donde la entidad legal, la marca comercial y el punto de operación son piezas separadas que se combinan.</p>
-        <p style="font-size:16px;color:var(--muted);line-height:1.6;">Cada caja factura a nombre de la razón social correcta y cada unidad mantiene su información separada hasta el reporte, donde vuelve a juntarse.</p>
+    <div class="cap2-grid reveal">
+      <div class="cap2">
+        <div class="cap2-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 8H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h2"/><path d="M17 8h2a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"/><path d="M8 12h8"/></svg></div>
+        <h3>Integración de sistemas</h3>
+        <p>Plataformas de distintas generaciones, APIs y la misma información repartida en sitios y versiones distintas.</p>
       </div>
-      <div class="arch-blocks">
-        <div class="arch-block"><b>Entidad legal</b><span>Razón social, RUC, datos fiscales</span></div>
-        <div class="arch-block"><b>Marca comercial</b><span>Identidad, catálogo, cara al público</span></div>
-        <div class="arch-block"><b>Operación</b><span>Unidades de negocio y sus procesos</span></div>
-        <div class="arch-block"><b>Usuarios y roles</b><span>Quién puede hacer qué, y dónde</span></div>
-        <div class="arch-block"><b>Caja y transacciones</b><span>Cobros, turnos y cierres por punto</span></div>
-        <div class="arch-block"><b>Reportes</b><span>Resultado por unidad y consolidado</span></div>
+      <div class="cap2">
+        <div class="cap2-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/><circle cx="12" cy="11" r="1.6"/><path d="M12 12.6V15"/></svg></div>
+        <h3>Identidad y accesos</h3>
+        <p>Quién puede hacer qué y dónde. Roles, permisos, bitácora y trazabilidad de cada acción.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="section compacta" style="padding-top:0;">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="section-num">Capacidades de ingeniería</div>
-      <h2>No todo se resuelve con una aplicación web.</h2>
-    </div>
-    <div class="cap-grid reveal">
-      <div class="cap-card"><h3>Agentes de dispositivo</h3><p>Software propio que se instala en una flota, se identifica, reporta y se actualiza solo.</p></div>
-      <div class="cap-card"><h3>Defensa en la aplicación</h3><p>Detección y respuesta a abuso, con bloqueo por reputación o solo observación.</p></div>
-      <div class="cap-card"><h3>Cifrado extremo a extremo</h3><p>Mensajería cifrada con renovación de claves, diseñada e implementada por nosotros.</p></div>
-      <div class="cap-card"><h3>IA que corre en local</h3><p>Reconocimiento de voz y modelos en la máquina del usuario, sin enviar el contenido a terceros.</p></div>
-      <div class="cap-card"><h3>Tiempo real</h3><p>Ubicación, telemetría y video en vivo, con reconexión y estado consistente.</p></div>
-      <div class="cap-card"><h3>Escritorio y navegador</h3><p>Clientes de escritorio y extensiones que automatizan donde la web no llega.</p></div>
-    </div>
-    <div class="stack-lists reveal">
-      <div class="stack-list"><b>Lenguajes</b><div class="tag-row"><span>Java</span><span>Python</span><span>C#</span><span>C</span><span>C++</span><span>TypeScript</span><span>JavaScript</span><span>.NET</span></div></div>
-      <div class="stack-list"><b>Nube e infraestructura</b><div class="tag-row"><span>AWS</span><span>Azure</span><span>Oracle Cloud</span><span>Docker</span><span>Linux</span><span>Nginx</span></div></div>
-      <div class="stack-list"><b>Datos y plataformas</b><div class="tag-row"><span>PostgreSQL</span><span>Oracle Database</span><span>Redis</span><span>Angular</span><span>Node.js</span><span>Prisma</span><span>Ionic</span><span>Electron</span></div></div>
-    </div>
-    <p class="stack-note reveal">Desplegamos donde su organización ya esté: su nube o su centro de datos. Las capacidades de arriba se describen en genérico por confidencialidad.</p>
-  </div>
-</section>
-
-<section class="section compacta" style="border-top:1px solid var(--line-2);">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="section-num">Diferentes disciplinas. Una misma responsabilidad.</div>
-    </div>
-    <div class="disc-grid reveal">
-      <div class="disc-card"><h3>Ingeniería</h3><ul><li>Ingeniería de software</li><li>Arquitectura de sistemas</li><li>Desarrollo e integración</li><li>Datos y APIs</li></ul></div>
-      <div class="disc-card"><h3>Ciberseguridad</h3><ul><li>Seguridad de aplicaciones</li><li>Identidad, accesos y APIs</li><li>Infraestructura y DevSecOps</li><li>Modelado de amenazas</li></ul></div>
-      <div class="disc-card"><h3>Operación crítica</h3><ul><li>Seguridad pública</li><li>Análisis de amenazas y riesgo</li><li>Contingencia y continuidad</li><li>Coordinación y decisión</li></ul></div>
-    </div>
-    <p class="disc-note reveal">Ingeniería de software con posgrados en ciberseguridad, seguridad pública y análisis de amenazas, y experiencia profesional en entornos donde la planificación, el riesgo y la decisión bajo presión son parte del trabajo diario.</p>
-  </div>
-</section>
-
-<section class="section compacta">
-  <div class="container">
-    <div class="cont-layout reveal">
-      <div>
-        <div class="section-num">Construir. Proteger. Anticipar.</div>
-        <ul class="cont-list">
-          <li>Una aplicación puede fallar.</li>
-          <li>Una dependencia puede dejar de responder.</li>
-          <li>Una credencial puede verse comprometida.</li>
-          <li>Una integración puede degradarse.</li>
-          <li>Una decisión puede llegar tarde.</li>
-        </ul>
-        <div class="cont-final">La operación tiene que continuar.</div>
+      <div class="cap2">
+        <div class="cap2-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l5-3v16"/><path d="M14 21V11l5 2v8"/><path d="M7.5 11h.01M7.5 14h.01"/></svg></div>
+        <h3>Estructura multimarca</h3>
+        <p>Entidad legal, marca comercial y punto de operación como piezas separadas: cada caja factura a nombre de la razón social correcta.</p>
       </div>
-      <div class="cont-right">
-        <p>Diseñamos tecnología considerando no solo el escenario ideal, sino lo que ocurre cuando las condiciones cambian.</p>
+      <div class="cap2">
+        <div class="cap2-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12a7 7 0 0 1 7-7"/><path d="M19 12a7 7 0 0 1-7 7"/><circle cx="12" cy="12" r="2.4"/><path d="M2.5 12h1.6M19.9 12h1.6"/></svg></div>
+        <h3>Tiempo real y sin conexión</h3>
+        <p>Ubicación, telemetría y video en vivo. Opera sin internet y reconcilia al recuperar señal.</p>
+      </div>
+      <div class="cap2">
+        <div class="cap2-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="9.5" rx="2.2"/><path d="M8 10.5V7.8a4 4 0 0 1 8 0v2.7"/><path d="M12 14.6v1.8"/></svg></div>
+        <h3>Cifrado y defensa</h3>
+        <p>Cifrado extremo a extremo con renovación de claves, detección de abuso e IA que corre en la máquina del usuario.</p>
+      </div>
+      <div class="cap2">
+        <div class="cap2-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 12a8.5 8.5 0 1 1-2.6-6.1"/><path d="M20.5 4.6V10h-5.4"/></svg></div>
+        <h3>Continuidad</h3>
+        <p>Qué ocurre cuando una dependencia deja de responder o una credencial se compromete, y cómo se reconstruye después.</p>
+      </div>
+      <div class="cap2">
+        <div class="cap2-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8 20.5h8M12 16.5v4"/><path d="M8.5 10.5l2 2 4-4"/></svg></div>
+        <h3>Agentes de dispositivo</h3>
+        <p>Software propio que se instala en una flota, se identifica, reporta y se actualiza solo.</p>
+      </div>
+      <div class="cap2">
+        <div class="cap2-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 8.5h18"/><path d="M6.2 6.2h.01M8.6 6.2h.01"/><path d="M9 21h6"/></svg></div>
+        <h3>Escritorio y navegador</h3>
+        <p>Clientes de escritorio y extensiones que automatizan donde la web no llega.</p>
       </div>
     </div>
+
+    <div class="marcos2 reveal">
+      <div class="marcos2-cab">
+        <b>Marcos de referencia</b>
+        <span>Accesos por rol, bitácora, cifrado, gestión de secretos y respaldos. Certificación ISO/IEC 27001 en proceso.</span>
+      </div>
+      <div class="marcos2-row">
+        <div class="marco2"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12.5l2 2 4.5-4.5"/><circle cx="12" cy="12" r="8.5"/></svg><span>ISO/IEC 27001</span></div>
+        <div class="marco2"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12.5l2 2 4.5-4.5"/><circle cx="12" cy="12" r="8.5"/></svg><span>OWASP ASVS</span></div>
+        <div class="marco2"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12.5l2 2 4.5-4.5"/><circle cx="12" cy="12" r="8.5"/></svg><span>OWASP Top 10</span></div>
+        <div class="marco2"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12.5l2 2 4.5-4.5"/><circle cx="12" cy="12" r="8.5"/></svg><span>NIST CSF</span></div>
+        <div class="marco2"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12.5l2 2 4.5-4.5"/><circle cx="12" cy="12" r="8.5"/></svg><span>CIS Benchmarks</span></div>
+      </div>
+    </div>
+
+    <div class="stack2-grid reveal">
+        <div class="stack2">
+          <div class="stack2-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 8.5L5 12l4 3.5"/><path d="M15 8.5l4 3.5-4 3.5"/></svg></div>
+          <div><b>Lenguajes</b><span>Java · Python · C# · C · C++ · TypeScript · JavaScript · .NET</span></div>
+        </div>
+        <div class="stack2">
+          <div class="stack2-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 18.5h9.2a3.8 3.8 0 0 0 .3-7.6 5.6 5.6 0 0 0-10.7-1.2 4.4 4.4 0 0 0 1.2 8.8z"/></svg></div>
+          <div><b>Nube e infraestructura</b><span>AWS · Azure · Oracle Cloud · Docker · Linux · Nginx</span></div>
+        </div>
+        <div class="stack2">
+          <div class="stack2-ic"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6.5" rx="7.5" ry="3"/><path d="M4.5 6.5v11c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-11"/><path d="M4.5 12c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3"/></svg></div>
+          <div><b>Datos y plataformas</b><span>PostgreSQL · Oracle · Redis · Angular · Node.js · Prisma · Ionic · Electron</span></div>
+        </div>
+    </div>
+
+    <p class="cap2-nota reveal">Ingeniería de software con posgrados en ciberseguridad, seguridad pública y análisis de amenazas. Desplegamos donde su organización ya esté: su nube o su centro de datos. Las capacidades se describen en genérico por confidencialidad.</p>
   </div>
 </section>
 
