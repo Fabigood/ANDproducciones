@@ -223,12 +223,17 @@
   .clientes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(196px,100%),1fr));gap:14px;margin-bottom:clamp(26px,4vw,36px);}
   .cliente{background:var(--midnight-2);border:1px solid var(--line-2);border-radius:16px;padding:22px 20px;transition:border-color .25s,transform .25s;}
   .cliente:hover{border-color:var(--cobalto);transform:translateY(-3px);}
-  .cliente-marca{width:42px;height:42px;border-radius:11px;background:var(--cobalto-soft);color:var(--cobalto-txt);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-size:14px;font-weight:700;letter-spacing:.04em;margin-bottom:14px;}
+  /* Caja de altura fija: los logos vienen con proporciones muy distintas y sin
+     esto cada tarjeta empezaba el texto a una altura diferente. */
+  .cliente-marca{height:46px;display:flex;align-items:center;justify-content:flex-start;margin-bottom:16px;}
+  .cliente-marca img{max-height:100%;max-width:100%;width:auto;height:auto;object-fit:contain;}
+  .cliente-marca.sin-logo{width:46px;border-radius:12px;background:var(--line-2);justify-content:center;}
+  .cliente-marca.sin-logo svg{width:22px;height:22px;stroke:var(--plata);}
   .cliente b{display:block;font-family:'Sora',sans-serif;font-size:16px;font-weight:600;margin-bottom:3px;}
   .cliente span{display:block;font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--cobalto-txt);margin-bottom:10px;}
   .cliente p{font-size:13px;color:var(--muted);line-height:1.5;}
   .cliente.confidencial span{color:var(--muted-2);}
-  .cliente.confidencial .cliente-marca{background:var(--line-2);color:var(--plata);}
+
 
   .clientes-cifras{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr));gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:16px;overflow:hidden;}
   .clientes-cifras div{background:var(--midnight);padding:20px 18px;text-align:center;}
@@ -562,31 +567,33 @@
     <h2 class="clientes-titulo">Negocios que operan todos los días sobre lo que construimos.</h2>
     <div class="clientes-grid">
       <div class="cliente">
-        <div class="cliente-marca">VG</div>
+        <div class="cliente-marca"><img src="/assets/clientes/vibego.png" alt="VibeGo" width="78" height="72" decoding="async"></div>
         <b>VibeGo</b>
         <span>Eventos y taquilla</span>
         <p>Vende entradas y las valida sin internet.</p>
       </div>
       <div class="cliente">
-        <div class="cliente-marca">CA</div>
-        <b>Canalimeña</b>
+        <div class="cliente-marca"><img src="/assets/clientes/canalimena.png" alt="Cañalimeña group" width="180" height="72" decoding="async"></div>
+        <b>Cañalimeña</b>
         <span>Hotel y restaurante</span>
         <p>Reservas, cocina y caja en una sola plataforma.</p>
       </div>
       <div class="cliente">
-        <div class="cliente-marca">BB</div>
+        <div class="cliente-marca"><img src="/assets/clientes/burgerbeer.png" alt="Burger Beer" width="223" height="72" decoding="async"></div>
         <b>Burger Beer</b>
         <span>Restaurante</span>
         <p>Pedidos, promociones y cierre por turno.</p>
       </div>
       <div class="cliente">
-        <div class="cliente-marca">CK</div>
+        <div class="cliente-marca"><img src="/assets/clientes/calikaphe.png" alt="Calikaphé Cafetería" width="216" height="72" decoding="async"></div>
         <b>Calikaphé</b>
         <span>Cafetería</span>
         <p>Punto de venta y control de inventario.</p>
       </div>
       <div class="cliente confidencial">
-        <div class="cliente-marca">FA</div>
+        <div class="cliente-marca sin-logo">
+          <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/></svg>
+        </div>
         <b>Fuerzas Armadas</b>
         <span>Bajo confidencialidad</span>
         <p>Operación crítica en web, móvil y escritorio.</p>
@@ -664,7 +671,7 @@
       <div class="case-card">
         <div class="case-tag">Hotelería y restauración</div>
         <h3>Grupo multimarca</h3>
-        <div class="case-org">Canalimeña</div>
+        <div class="case-org">Cañalimeña</div>
         <p>Reservas, punto de venta, comandas en cocina, promociones, portal de wifi y utilidad por unidad de negocio, con tres marcas sobre una sola plataforma.</p>
         <div class="case-chips"><span class="chip">Cada marca, su RUC</span><span class="chip">Cierre por turno</span></div>
         <div class="case-stack">Angular · Node · Prisma · PostgreSQL · Redis</div>
