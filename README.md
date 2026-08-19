@@ -16,6 +16,9 @@ deploy/
   deploy.sh           despliegue al VPS
   andproducciones.conf  copia versionada del conf de nginx
   csp-hashes.py       calcula los sha256 de los <script> inline para el CSP
+  deploy-demo.sh      despliegue de los demos de Poryectosdemo/
+  demo.conf           plantilla de nginx para los demos
+Poryectosdemo/        demos de cliente, uno por carpeta
 ```
 
 ## Despliegue
@@ -36,6 +39,22 @@ Sube los archivos y recarga nginx. Para cambios de contenido, es todo lo que hac
 Hace lo de arriba y además se asegura de que exista el certificado. Solo hace falta
 la primera vez o si se cambia de dominio. Es idempotente: si el certificado ya existe
 no lo vuelve a pedir, así que no gasta el límite de emisiones de Let's Encrypt.
+
+## Demos de cliente
+
+Cada demo vive en `Poryectosdemo/<nombre>/` y se publica en
+`<nombre>.andproducciones.com` desde `/var/www/<nombre>`:
+
+```bash
+./deploy/deploy-demo.sh agave           # despliega y recarga nginx
+./deploy/deploy-demo.sh agave --setup   # además crea el conf y emite el certificado
+```
+
+El HTML de la carpeta se sube como `index.html` se llame como se llame en el repo
+(el de agave es `index_4.html`). `deploy/demo.conf` es la plantilla de nginx: mismo
+CSP por hash que la landing, más lo que necesitan los demos de Google (fuentes y el
+mapa embebido). Los demos van con `noindex` y su propio `robots.txt`, para que no
+compitan en buscadores con andproducciones.com.
 
 ## Detalles que conviene conocer antes de tocar nada
 
